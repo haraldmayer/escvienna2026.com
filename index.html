@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Information hub for the Eurovision Song Contest 2026 in Vienna. Plan your trip, find accommodation, and get the latest updates.">
+  <title>Eurovision 2026 Vienna | ESCVienna2026.com</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; background: #f5f5f5; color: #333; }
+    header { background: #63003c; color: white; padding: 1em 2em; }
+    nav { display: flex; justify-content: space-between; align-items: center; }
+    nav a { color: white; margin-left: 1em; text-decoration: none; }
+    main { padding: 2em; max-width: 900px; margin: auto; background: white; }
+    footer { text-align: center; font-size: 0.9em; padding: 1em; background: #eee; margin-top: 2em; }
+    .lang-switch { float: right; }
+    .hero { width: 100%; max-height: 400px; object-fit: cover; margin-bottom: 1em; }
+    .ref-link { color: #63003c; font-weight: bold; text-decoration: none; }
+    .ref-link:hover { text-decoration: underline; }
+  </style>
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('[data-en], [data-de]').forEach(el => {
+        el.textContent = el.getAttribute('data-' + lang);
+      });
+      location.hash = lang;
+    }
+
+    window.onload = () => {
+      const lang = location.hash.replace('#', '') || 'en';
+      setLang(lang);
+    };
+  </script>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><strong>ESC Vienna 2026</strong></div>
+      <div class="lang-switch">
+        <a href="#en" onclick="setLang('en')">English</a> |
+        <a href="#de" onclick="setLang('de')">Deutsch</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Wien_-_Rathaus_%282%29.JPG/1280px-Wien_-_Rathaus_%282%29.JPG" class="hero" alt="Vienna City Hall - ESC 2026 Venue">
+
+    <h1 data-en="Welcome to Eurovision 2026 in Vienna!" data-de="Willkommen beim Eurovision 2026 in Wien!"></h1>
+
+    <p data-en="Discover everything about the ESC 2026 hosted in Austria's capital. Find event dates, ticket details, city info, and tips for your trip." 
+       data-de="Hier findest du alle Infos zum ESC 2026 in der österreichischen Hauptstadt. Termine, Tickets, Stadtinfos und Tipps für deine Reise."></p>
+
+    <h2 data-en="Plan Your Stay" data-de="Plane deinen Aufenthalt"></h2>
+    <p data-en="Book your hotel early! Check the best rates here:" 
+       data-de="Buche dein Hotel frühzeitig! Hier findest du die besten Angebote:"></p>
+    <p><a class="ref-link" href="https://www.booking.com/city/at/vienna.html?aid=your_referral_id" target="_blank">→ Booking.com – Vienna Hotels</a></p>
+
+    <h2 data-en="Explore Vienna" data-de="Wien entdecken"></h2>
+    <p data-en="From imperial sights to hip districts – Vienna is ready to welcome Eurovision fans!" 
+       data-de="Von imperialen Sehenswürdigkeiten bis zu hippen Bezirken – Wien freut sich auf ESC-Fans!"></p>
+
+    <h2 data-en="Get Updates" data-de="Bleib informiert"></h2>
+    <p data-en="Stay tuned for the latest ESC 2026 news. Follow us on social media and check back regularly." 
+       data-de="Bleib auf dem Laufenden zu ESC 2026. Folge uns in den sozialen Medien und schau regelmäßig vorbei."></p>
+  </main>
+
+  <footer>
+    <p>Impressum / Imprint:</p>
+    <p>Harald Mayer, Kienmayergasse 43, 1140 Wien, Austria</p>
+    <p data-en="This site is not affiliated with the EBU or the official Eurovision organizers." 
+       data-de="Diese Seite steht in keiner Verbindung zur EBU oder den offiziellen Veranstaltern des Eurovision."></p>
+  </footer>
+</body>
+</html>
