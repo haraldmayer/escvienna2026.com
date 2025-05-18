@@ -1,0 +1,50 @@
+---
+import en from '../../i18n/en.json';
+import de from '../../i18n/de.json';
+
+export async function getStaticPaths() {
+  return [{ params: { lang: 'en' } }, { params: { lang: 'de' } }];
+}
+
+const { lang } = Astro.params;
+const t = lang === 'de' ? de : en;
+---
+<!DOCTYPE html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{t["siteTitle"]}</title>
+    <link rel="stylesheet" href="/styles/index.css">
+  </head>
+  <body>
+    <header>
+      <strong>{t["siteTitle"]}</strong>
+      <nav>
+        <a href="/en/">{t["lang.en"]}</a> | <a href="/de/">{t["lang.de"]}</a>
+      </nav>
+    </header>
+    <div class="hero-bg">
+      <div class="hero-content">
+        <h1>{t["home.title"]}</h1>
+        <p>{t["home.subtitle"]}</p>
+      </div>
+    </div>
+    <main>
+      <h2>{t["section.expect.title"]}</h2>
+      <p>{t["section.expect.text"]}</p>
+      <h2>{t["section.stay.title"]}</h2>
+      <p>{t["section.stay.text"]}</p>
+      <p><a href="https://www.booking.com">{t["link.booking"]}</a></p>
+      <h2>{t["section.explore.title"]}</h2>
+      <p>{t["section.explore.text1"]}</p>
+      <p>{t["section.explore.text2"]}</p>
+      <p><a href="https://www.getyourguide.com">{t["link.tours"]}</a></p>
+    </main>
+    <footer>
+      <p><a href={`/${lang}/impressum/`}>{t["footer.imprint"]}</a></p>
+      <p>{t["footer.notice1"]}</p>
+      <p>{t["footer.notice2"]}</p>
+    </footer>
+  </body>
+</html>

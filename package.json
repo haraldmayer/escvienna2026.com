@@ -1,0 +1,17 @@
+{
+  "name": "astro-i18n-clean",
+  "version": "1.0.0",
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "dev": "astro dev",
+    "build": "astro build && node scripts/postbuild.js",
+    "preview": "astro preview",
+    "deploy": "gh-pages -d dist"
+  },
+  "dependencies": {
+    "astro": "^4.0.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
