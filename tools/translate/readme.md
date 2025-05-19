@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```bash
-node tools/translate/translate-json.js src/i18n/de en fr
+node tools/translate/translate-json.js src/i18n/de.json en fr
 ```
 
 ## Instructions
