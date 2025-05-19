@@ -31,4 +31,6 @@ In src/pages/[lang]/index.astro:
 ## TODO
 
 - Submit to Google index  
-- Add no-cookie web analytics  
+- Add no-cookie web analytics
+- build links (eg reddits about ESC but also about chatGPT hacks)
+- add additional languages

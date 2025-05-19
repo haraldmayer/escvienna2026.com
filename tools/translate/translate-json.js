@@ -124,7 +124,7 @@ const langMap = {
   pt: 'Portuguese',
   ru: 'Russian',
   zh: 'Chinese',
-  jp: 'Japanese',
+  ja: 'Japanese',
   ko: 'Korean',
   tw: 'Chinese (Taiwan)',
   nl: 'Dutch',
