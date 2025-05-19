@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "build": "astro build && node scripts/postbuild.js",
     "preview": "astro preview",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "deploy-from-ci": "gh-pages -d dist -u \"github-actions-bot <support+actions@github.com>\" --repo=https://x-access-token:${GITHUB_TOKEN}@github.com/haraldmayer/escvienna2026.com.git"
   },
   "dependencies": {
     "astro": "^4.0.0"
