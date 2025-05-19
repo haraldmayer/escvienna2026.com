@@ -33,10 +33,11 @@ In src/pages/[lang]/index.astro:
 ### code and content
 
 - Add no-cookie web analytics
-- add additional languages
-- allow markup inside of language file
+- add additional languages ✅
+- allow markup inside of language file ✅
 - add a "content regenerator" logic (rewrite the main content block based on current events)
-- add gh action for automated building
+- add gh action for automated building ✅
+- make sitemap dynamic
 
 ### other
 
