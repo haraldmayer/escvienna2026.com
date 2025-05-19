@@ -20,13 +20,13 @@ npm run deploy   # Pushes the contents of /dist to the gh-pages branch
 
 ```bash
 node tools/translate/translate-json.js src/i18n/de.json fr es
-node tools/translate/translate-json.js src/i18n/de.json fr es --skip-existing # only translate new keys
+node tools/translate/translate-json.js src/i18n/de.json fr es en ja --skip-existing # only translate new keys
 ```
 
 In src/pages/[lang]/index.astro:
 
 - add additional languages at the top of file (add to imports, function getStaticPaths, const translations)
-- in all de.json, add keys for additional languages and re-generate other language files
+- in de.json, add keys for additional languages and re-generate other language files with --skip-existing
 
 ## TODO
 
