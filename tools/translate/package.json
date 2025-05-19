@@ -1,0 +1,15 @@
+{
+  "name": "json-translator",
+  "version": "1.0.0",
+  "description": "Translate JSON language files using OpenAI",
+  "main": "translate-json.js",
+  "scripts": {
+    "start": "node translate-json.js",
+    "translate": "node translate-json.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "fs": "^0.0.1-security",
+    "openai": "^4.98.0"
+  }
+}

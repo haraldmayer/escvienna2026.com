@@ -81,3 +81,33 @@ footer {
   font-size: 1.2rem;
   color: #eee;
 }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* prevent line breaks */
+  border: 0;
+}
+nav form {
+  display: inline-block;
+}
+
+#lang-select {
+  padding: 0.25em 0.5em;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+#lang-select:hover,
+#lang-select:focus {
+  border-color: #007acc; /* your highlight color */
+  outline: none;
+}

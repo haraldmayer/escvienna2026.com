@@ -1,27 +1,41 @@
 ---
-import en from '../../i18n/en.json';
-import de from '../../i18n/de.json';
+import en from "../../i18n/en.json";
+import de from "../../i18n/de.json";
 
 export async function getStaticPaths() {
-  return [{ params: { lang: 'en' } }, { params: { lang: 'de' } }];
+  return [{ params: { lang: "en" } }, { params: { lang: "de" } }];
 }
 
 const { lang } = Astro.params;
-const t = lang === 'de' ? de : en;
+const t = lang === "de" ? de : en;
 ---
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{t["siteTitle"]}</title>
-    <link rel="stylesheet" href="/styles/index.css">
+    <link rel="stylesheet" href="/styles/index.css" />
   </head>
   <body>
     <header>
       <strong>{t["siteTitle"]}</strong>
       <nav>
-        <a href="/en/">{t["lang.en"]}</a> | <a href="/de/">{t["lang.de"]}</a>
+        <form>
+          <label for="lang-select" class="visually-hidden">Language</label>
+          <select
+            id="lang-select"
+            name="lang"
+            onchange="location.href=this.value"
+          >
+            <option value="/en/" selected={lang === "en"}>{t["lang.en"]}</option
+            >
+            <option value="/de/" selected={lang === "de"}>{t["lang.de"]}</option
+            >
+            <!-- More languages -->
+          </select>
+        </form>
       </nav>
     </header>
     <div class="hero-bg">
@@ -32,7 +46,7 @@ const t = lang === 'de' ? de : en;
     </div>
     <main>
       <h2>{t["section.expect.title"]}</h2>
-      <p>{t["section.expect.text"]}</p>
+      <p>{t["esc2026_summary"]}</p>
       <h2>{t["section.stay.title"]}</h2>
       <p>{t["section.stay.text"]}</p>
       <p><a href="https://www.booking.com">{t["link.booking"]}</a></p>

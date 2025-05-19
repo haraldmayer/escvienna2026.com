@@ -1,15 +1,23 @@
-# escvienna2026.com
+# [escvienna2026.com](https://escvienna2026.com)
 
-- header image downloaded from https://pixabay.com/photos/vienna-city-hall-building-7971742/
+- Header image downloaded from [Pixabay](https://pixabay.com/photos/vienna-city-hall-building-7971742/)
 
-## dev
-The gh-pages branch contains only dist/ and is used for gh pages
+## Dev
 
-npm run build
-npm run deploy
+The `gh-pages` branch contains only the `dist/` folder and is used for GitHub Pages.
 
-## todo
+```bash
+# Start the server and serves project
+# need to call language dir since the index.html is only created post build
+# http://localhost:4321/de
+npm run dev      
+npm run build    # Generate the static site in /dist
+npm run preview  # Starts server and serves /dist (e.g., http://localhost:4321)
+npm run deploy   # Pushes the contents of /dist to the gh-pages branch
+```
 
-- build multilanguage variants from language files
-- submit to google index
-- add no-cookie web analytics 
+## TODO
+
+- Build multilanguage variants from language files  
+- Submit to Google index  
+- Add no-cookie web analytics  
