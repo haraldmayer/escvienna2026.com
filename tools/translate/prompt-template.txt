@@ -2,6 +2,7 @@ Translate the following text values to ${targetLang}. Keep all keys unchanged.
 
 Important instructions:
 - Preserve placeholders such as {name}, %s, or {{variable}} exactly as they are.
+- preserve values in double brackets [[]] in original language (those are typically brand names) but remove the double brackets.
 - preserve HTML tags and formatting.
 - Align terminology with Salesforce usage wherever applicable.
 - Keep distinct Git terms in English, such as "Commit", "Branch", "Pull Request", etc.
