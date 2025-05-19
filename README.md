@@ -13,7 +13,7 @@ The `gh-pages` branch contains only the `dist/` folder and is used for GitHub Pa
 npm run dev      
 npm run build    # Generate the static site in /dist
 npm run preview  # Starts server and serves /dist (e.g., http://localhost:4321)
-npm run deploy   # Pushes the contents of /dist to the gh-pages branch
+npm run deploy   # Pushes the contents of /dist to the gh-pages branch; obsolete since done from ci (gh actions)
 ```
 
 ### Translate
