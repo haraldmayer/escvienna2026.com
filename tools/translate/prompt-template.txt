@@ -2,6 +2,7 @@ Translate the following text values to ${targetLang}. Keep all keys unchanged.
 
 Important instructions:
 - Preserve placeholders such as {name}, %s, or {{variable}} exactly as they are.
+- preserve HTML tags and formatting.
 - Align terminology with Salesforce usage wherever applicable.
 - Keep distinct Git terms in English, such as "Commit", "Branch", "Pull Request", etc.
 - Keep terms distinct to our Salesforce DevOps solution like "Hutte", "Pool", "Deployment", "Pipeline", "Snapshot", "Scratch Org", "Sandbox" etc. in English
@@ -13,6 +14,10 @@ Here is the list of values to translate:
 
 ${textBlock}
 
-Return only the translated values in this format:
-- key1: translated text
-- key2: translated text
+Return only the translated values in this JSON format:
+{
+  "key1": "translated text",
+  "key2": "translated text"
+}
+
+Respond only with a valid JSON object containing the translated values. Do not include explanations, comments, or code blocks.

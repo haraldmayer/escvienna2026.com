@@ -1,0 +1,9 @@
+---
+const { lang, t } = Astro.props;
+---
+
+<footer>
+  <p><a href={`/${lang}/impressum/`}>{t["footer.imprint"]}</a></p>
+  <p>{t["footer.notice1"]}</p>
+  <p>{t["footer.notice2"]}</p>
+</footer>

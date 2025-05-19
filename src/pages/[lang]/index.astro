@@ -64,7 +64,7 @@ const t = translations[lang] || en;
     </div>
     <main>
       <h2>{t["section.expect.title"]}</h2>
-      <p>{t["esc2026_summary"]}</p>
+      <div set:html={t["esc2026_summary"]} />
       <h2>{t["section.stay.title"]}</h2>
       <p>{t["section.stay.text"]}</p>
       <p><a href="https://www.booking.com">{t["link.booking"]}</a></p>

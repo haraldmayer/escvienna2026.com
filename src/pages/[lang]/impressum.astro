@@ -1,35 +1,63 @@
 ---
-import en from '../../i18n/en.json';
-import de from '../../i18n/de.json';
+import en from "../../i18n/en.json";
+import de from "../../i18n/de.json";
+import fr from "../../i18n/fr.json";
+import es from "../../i18n/es.json";
+import ja from "../../i18n/ja.json";
+
+import LanguageSwitcher from "../../components/LanguageSwitcher.astro";
+import Footer from "../../components/Footer.astro";
 
 export async function getStaticPaths() {
-  return [{ params: { lang: 'en' } }, { params: { lang: 'de' } }];
+  return [
+    { params: { lang: "en" } },
+    { params: { lang: "de" } },
+    { params: { lang: "fr" } },
+    { params: { lang: "es" } },
+    { params: { lang: "ja" } },
+  ];
 }
 
 const { lang } = Astro.params;
-const t = lang === 'de' ? de : en;
+const translations = { en, de, fr, es, ja };
+const t = translations[lang] || en;
 ---
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{t["nav.imprint"]}</title>
+    <link rel="stylesheet" href="/styles/index.css" />
   </head>
   <body>
     <header>
+      <strong>{t["siteTitle"]}</strong>
       <nav>
-        <strong>{t["nav.imprint"]}</strong>
-        <div><a href="/en/">{t["lang.en"]}</a> | <a href="/de/">{t["lang.de"]}</a></div>
+        <LanguageSwitcher lang={lang} t={t} />
       </nav>
     </header>
+
     <main>
       <h1>{t["impressum.title"]}</h1>
       <p><strong>{t["impressum.subtitle"]}</strong></p>
-      <p>Harald Mayer<br />Kienmayergasse 43<br />1140 Wien<br />Österreich</p>
-      <p><strong>{t["impressum.contact"]}</strong><br />E-Mail: <a href="mailto:info@escvienna2026.com">info@escvienna2026.com</a></p>
+      <p>
+        Harald Mayer<br />
+        Kienmayergasse 43<br />
+        1140 Wien<br />
+        Österreich
+      </p>
+      <p>
+        <strong>{t["impressum.contact"]}</strong><br />
+        E-Mail: <a href="mailto:info@escvienna2026.com"
+          >info@escvienna2026.com</a
+        >
+      </p>
       <p>{t["impressum.notice"]}</p>
       <p><a href={`/${lang}/`}>{t["backToHome"]}</a></p>
     </main>
+
+    <Footer lang={lang} t={t} />
   </body>
 </html>

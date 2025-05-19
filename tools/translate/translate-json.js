@@ -57,12 +57,20 @@ async function translateValues(flatValues, targetLang = 'French') {
       messages: [{ role: 'user', content: prompt }],
     });
 
-    const lines = completion.choices[0].message.content.split('\n');
-    for (const line of lines) {
-      const match = line.match(/^- (.+?):\s*(.+)$/);
-      if (match) {
-        translated[match[1].trim()] = match[2].trim();
-      }
+    let content = completion.choices[0].message.content;
+
+    // Remove common markdown wrappers and prefixes
+    content = content
+      .replace(/^```json\s*/i, '')  // remove starting ```json
+      .replace(/^```/, '')          // remove stray ```
+      .replace(/```$/, '')          // remove ending ```
+      .replace(/^Here's the translation.*?\n/, '');  // remove intro lines if present
+    
+    try {
+      const parsed = JSON.parse(content.trim());
+      Object.assign(translated, parsed);
+    } catch (err) {
+      console.error('⚠️ Failed to parse JSON response:', content);
     }
   }
 

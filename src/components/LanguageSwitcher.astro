@@ -1,0 +1,14 @@
+---
+const { lang, t } = Astro.props;
+---
+
+<form>
+  <label for="lang-select" class="visually-hidden">Language</label>
+  <select id="lang-select" name="lang" onchange="location.href=this.value">
+    <option value="/en/" selected={lang === "en"}>{t["lang.en"]}</option>
+    <option value="/de/" selected={lang === "de"}>{t["lang.de"]}</option>
+    <option value="/fr/" selected={lang === "fr"}>{t["lang.fr"]}</option>
+    <option value="/es/" selected={lang === "es"}>{t["lang.es"]}</option>
+    <option value="/ja/" selected={lang === "ja"}>{t["lang.ja"]}</option>
+  </select>
+</form>

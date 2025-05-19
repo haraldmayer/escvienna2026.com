@@ -5,8 +5,8 @@ in .env, add OPENAI_API_KEY=
 ## Example Usage
 
 ```bash
-node tools/translate/translate-json.js src/i18n/de.json en fr
-node tools/translate/translate-json.js src/i18n/de.json en fr --skip-existing # for adding new keys only
+node tools/translate/translate-json.js src/i18n/de.json en fr es ja
+node tools/translate/translate-json.js src/i18n/de.json en fr es ja --skip-existing # for adding new keys only
 ```
 
 ## Instructions
