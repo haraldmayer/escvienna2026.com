@@ -4,6 +4,7 @@ const promptTemplatePath = path.join(__dirname, 'prompt-template.txt');
 const promptTemplate = fs.readFileSync(promptTemplatePath, 'utf-8');
 const { OpenAI } = require('openai');
 require('dotenv').config();
+const minimist = require('minimist');
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
@@ -68,20 +69,52 @@ async function translateValues(flatValues, targetLang = 'French') {
   return translated;
 }
 
-async function translateFile(sourceFile, targetFile, targetLang) {
+async function translateFile(sourceFile, targetFile, targetLang, skipExisting = false) {
   const raw = fs.readFileSync(sourceFile, 'utf-8');
   const originalJson = JSON.parse(raw);
-  const flat = flattenJSON(originalJson);
+  const flatOriginal = flattenJSON(originalJson);
+  const orderedKeys = Object.keys(flatOriginal);
 
-  const translatedFlat = await translateValues(flat, targetLang);
+  let existingFlat = {};
+  let toTranslate = flatOriginal;
 
-  // Write the flat translated JSON directly, no unflattening
-  fs.writeFileSync(targetFile, JSON.stringify(translatedFlat, null, 2), 'utf-8');
+  if (skipExisting && fs.existsSync(targetFile)) {
+    const existingRaw = fs.readFileSync(targetFile, 'utf-8');
+    const existingJson = JSON.parse(existingRaw);
+    existingFlat = flattenJSON(existingJson);
+
+    toTranslate = Object.fromEntries(
+      Object.entries(flatOriginal).filter(([k]) => !existingFlat.hasOwnProperty(k))
+    );
+  }
+
+  const translatedFlat = await translateValues(toTranslate, targetLang);
+
+  // Merge: existing + translated, preserving original key order
+  const finalFlat = {};
+  for (const key of orderedKeys) {
+    finalFlat[key] = translatedFlat[key] || existingFlat[key] || flatOriginal[key];
+  }
+
+  fs.writeFileSync(targetFile, JSON.stringify(finalFlat, null, 2), 'utf-8');
   console.log(`✅ Saved: ${targetFile}`);
 }
 
+// -----------------------------
+// CLI Setup
+// -----------------------------
+const argv = minimist(process.argv.slice(2), {
+  boolean: ['skip-existing'],
+  alias: { s: 'skip-existing' },
+});
 
-const [, , sourceFile = 'src/i18n/en.json', ...langs] = process.argv;
+const sourceFile = argv._[0];
+const langs = argv._.slice(1).filter(arg => !arg.startsWith('--'));
+
+if (!sourceFile || langs.length === 0) {
+  console.error('❌ Usage: node translate-json.js source.json lang1 lang2 [--skip-existing]');
+  process.exit(1);
+}
 
 const langMap = {
   de: 'German',
@@ -96,21 +129,15 @@ const langMap = {
   tw: 'Chinese (Taiwan)',
   nl: 'Dutch',
   pl: 'Polish',
-  // Add more mappings if needed
 };
 
 (async () => {
   for (const langCode of langs) {
     const targetLang = langMap[langCode] || langCode;
-
-    // derive output filename from input filename + lang code
     const dir = path.dirname(sourceFile);
-    const base = path.basename(sourceFile, '.json'); // e.g. 'de' if 'de.json'
-
     const targetFile = path.join(dir, `${langCode}.json`);
 
-    console.log(`🔄 Translating ${sourceFile} to ${targetFile} (${targetLang})...`);
-
-    await translateFile(sourceFile, targetFile, targetLang);
+    console.log(`🔄 Translating ${sourceFile} → ${targetFile} (${targetLang})...`);
+    await translateFile(sourceFile, targetFile, targetLang, argv['skip-existing']);
   }
 })();
