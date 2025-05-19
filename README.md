@@ -36,6 +36,7 @@ In src/pages/[lang]/index.astro:
 - add additional languages
 - allow markup inside of language file
 - add a "content regenerator" logic (rewrite the main content block based on current events)
+- add gh action for automated building
 
 ### other
 
