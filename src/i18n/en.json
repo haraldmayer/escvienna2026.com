@@ -1,46 +1,28 @@
 {
   "siteTitle": "ESC Vienna 2026",
-  "lang": {
-    "en": "English",
-    "de": "German"
-  },
-  "nav": {
-    "imprint": "Imprint"
-  },
-  "home": {
-    "title": "Welcome to Eurovision 2026 in Vienna!",
-    "subtitle": "Get ready for one of the most spectacular music events in Europe – in the vibrant capital of Austria. Stay informed and start planning your trip."
-  },
-  "section": {
-    "expect": {
-      "title": "What to Expect",
-      "text": "While exact dates and venue are still pending, fans can look forward to an exciting ESC season in spring 2026 in Vienna."
-    },
-    "stay": {
-      "title": "Plan Your Stay",
-      "text": "Book your hotel early to secure the best deals:"
-    },
-    "explore": {
-      "title": "Discover Vienna",
-      "text1": "Discover imperial architecture, cozy coffee houses, and a vibrant nightlife during your stay.",
-      "text2": "Want to experience Vienna like a local? Discover tours and activities:"
-    }
-  },
-  "link": {
-    "booking": "→ Booking.com – Vienna Hotels",
-    "tours": "→ GetYourGuide – Tours in Vienna"
-  },
-  "footer": {
-    "imprint": "Imprint / Imprint",
-    "notice1": "This site is independently operated and has no connection to the EBU or the official ESC organizers.",
-    "notice2": "All content is original and does not use copyrighted material from the show."
-  },
-  "impressum": {
-    "title": "Imprint",
-    "subtitle": "Information according to § 5 TMG",
-    "contact": "Contact:",
-    "notice": "This website is a privately operated fan site and has no connection to the EBU or the official organizers of the Eurovision Song Contest. All content has been independently created and does not use copyrighted material."
-  },
-  "backToHome": "← Back to Homepage",
-  "esc2026_summary": "The Eurovision Song Contest 2026 will be hosted in Austria! Following the great victory of JJ with his hit \"Wasted Love\" at ESC 2025 in Basel, Austria will host for the third time – after the shows in 1967 and 2015. Preparations are now in full swing, as several Austrian cities compete to host the legendary music contest. Naturally, Vienna, the capital, is a frontrunner after proving in 2015 how to rock such a major event. Innsbruck is also in the game, with the famous Olympiahalle as a possible venue. Wels is in the race too, aiming to shine with a new, modern hall that should be completed by March 2026. Graz is also examining its city hall closely, and even smaller cities like Oberwart are showing great interest despite challenges like a lack of accommodation. Other cities like Salzburg and Klagenfurt have already withdrawn their bids due to either lacking suitable locations or the costs being too high. The ORF and the Austrian government will decide in the coming months where exactly the spectacle will take place. One thing is clear: ESC 2026 will captivate music fans with two exciting semi-finals and a grand finale. Look forward to an unforgettable show in Austria – it will be a real highlight!"
+  "lang.en": "English",
+  "lang.de": "Deutsch",
+  "lang.es": "Español",
+  "lang.fr": "Français",
+  "nav.imprint": "Imprint",
+  "home.title": "Welcome to Eurovision 2026 in Vienna!",
+  "home.subtitle": "Get ready for one of Europe's most spectacular music events – in the vibrant capital of Austria. Stay informed and start planning your trip.",
+  "section.expect.title": "What to Expect",
+  "section.expect.text": "Even though exact dates and venues are still pending, fans can look forward to an exciting ESC season in the spring of 2026 in Vienna.",
+  "section.stay.title": "Plan Your Stay",
+  "section.stay.text": "Book your hotel early to secure the best deals:",
+  "section.explore.title": "Discover Vienna",
+  "section.explore.text1": "Discover imperial architecture, cozy coffee houses, and a vibrant nightlife during your stay.",
+  "section.explore.text2": "Want to experience Vienna like a local? Check out tours and activities:",
+  "link.booking": "→ Booking.com – Vienna Hotels",
+  "link.tours": "→ GetYourGuide – Tours in Vienna",
+  "footer.imprint": "Imprint / Imprint",
+  "footer.notice1": "This page is independently operated and is not affiliated with the EBU or the official ESC organizers.",
+  "footer.notice2": "All content is original and does not use any copyrighted material from the show.",
+  "impressum.title": "Imprint",
+  "impressum.subtitle": "Information according to § 5 TMG",
+  "impressum.contact": "Contact:",
+  "impressum.notice": "This website is a privately operated fan site and is not affiliated with the EBU or the official organizers of the Eurovision Song Contest. All content was independently created and uses no copyrighted material.",
+  "backToHome": "← Back to Home",
+  "esc2026_summary": "The Eurovision Song Contest 2026 will take place in Austria! Following JJ's great victory with his hit \"Wasted Love\" at ESC 2025 in Basel, Austria will host for the third time – after the shows in 1967 and 2015. The preparations are now in full swing, as several Austrian cities want to host this legendary music competition. Naturally, Vienna is at the forefront, having already proven in 2015 how to rock such a major event. Innsbruck is also in the mix – with the famous Olympic Hall as a possible venue. Wels is in the race wanting to shine with a new, modern hall that should be completed by March 2026. Graz is also closely examining its Stadthalle, and even smaller cities like Oberwart are showing great interest – even facing challenges like a shortage of accommodations. Other cities like Salzburg and Klagenfurt have already withdrawn their bids due to either lack of suitable locations or the costs being too high. ORF and the Austrian government will decide in the coming months exactly where the spectacle will take place. One thing is clear: ESC 2026 will thrill music fans again with two exciting semi-finals and a grand final. Look forward to an unforgettable show in Austria – it's going to be a real highlight!"
 }

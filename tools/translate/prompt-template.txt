@@ -7,6 +7,7 @@ Important instructions:
 - Keep terms distinct to our Salesforce DevOps solution like "Hutte", "Pool", "Deployment", "Pipeline", "Snapshot", "Scratch Org", "Sandbox" etc. in English
 - Just like all other translations, transcribe them using local scripts for non-Latin languages where applicable
 - ensure that the translated text is grammatically correct and contextually appropriate.
+- if the key starts with "lang.", do not translate it.
 
 Here is the list of values to translate:
 

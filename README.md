@@ -16,8 +16,18 @@ npm run preview  # Starts server and serves /dist (e.g., http://localhost:4321)
 npm run deploy   # Pushes the contents of /dist to the gh-pages branch
 ```
 
+### Translate
+
+```bash
+node tools/translate/translate-json.js src/i18n/de.json fr es
+```
+
+In src/pages/[lang]/index.astro:
+
+- add additional languages at the top of file (add to imports, function getStaticPaths, const translations)
+- in all de.json, add keys for additional languages and re-generate other language files
+
 ## TODO
 
-- Build multilanguage variants from language files  
 - Submit to Google index  
 - Add no-cookie web analytics  

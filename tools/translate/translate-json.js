@@ -68,18 +68,18 @@ async function translateValues(flatValues, targetLang = 'French') {
   return translated;
 }
 
-// Modified to translate a single JSON file instead of a folder
 async function translateFile(sourceFile, targetFile, targetLang) {
   const raw = fs.readFileSync(sourceFile, 'utf-8');
   const originalJson = JSON.parse(raw);
   const flat = flattenJSON(originalJson);
 
   const translatedFlat = await translateValues(flat, targetLang);
-  const finalJson = unflattenJSON(translatedFlat);
 
-  fs.writeFileSync(targetFile, JSON.stringify(finalJson, null, 2), 'utf-8');
+  // Write the flat translated JSON directly, no unflattening
+  fs.writeFileSync(targetFile, JSON.stringify(translatedFlat, null, 2), 'utf-8');
   console.log(`✅ Saved: ${targetFile}`);
 }
+
 
 const [, , sourceFile = 'src/i18n/en.json', ...langs] = process.argv;
 
