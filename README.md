@@ -30,7 +30,15 @@ In src/pages/[lang]/index.astro:
 
 ## TODO
 
-- Submit to Google index  
+### code and content
+
 - Add no-cookie web analytics
-- build links (eg reddits about ESC but also about chatGPT hacks)
 - add additional languages
+- allow markup inside of language file
+- add a "content regenerator" logic (rewrite the main content block based on current events)
+
+### other
+
+- Submit to Google index  
+- link building (eg reddits about ESC but also about chatGPT hacks)
+
