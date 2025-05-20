@@ -32,12 +32,15 @@ In src/pages/[lang]/index.astro:
 
 ### code and content
 
+- add a "content regenerator" logic (rewrite the main content block based on current events)
+- make sitemap dynamic
+- add FAQ
 - Add no-cookie web analytics
+- language tooling: allow re-translating individual keys only (also support hirarchy: eg only pass "parent node" and translate sub-nodes)
 - add additional languages ✅
 - allow markup inside of language file ✅
-- add a "content regenerator" logic (rewrite the main content block based on current events)
 - add gh action for automated building ✅
-- make sitemap dynamic
+
 
 ### other
 

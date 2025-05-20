@@ -1,9 +1,40 @@
 ---
-import en from "../../i18n/en.json";
-import de from "../../i18n/de.json";
-import fr from "../../i18n/fr.json";
-import es from "../../i18n/es.json";
-import ja from "../../i18n/ja.json";
+import en from "../../i18n/en.json"; // Großbritannien, Irland, Malta
+import de from "../../i18n/de.json"; // Deutschland, Österreich, Schweiz
+import fr from "../../i18n/fr.json"; // Frankreich, Schweiz, Belgien
+import es from "../../i18n/es.json"; // Spanien
+import ja from "../../i18n/ja.json"; // (nicht ESC, evtl. Besucher)
+import it from "../../i18n/it.json"; // Italien, Schweiz
+//import nl from "../../i18n/nl.json"; // Niederlande, Belgien
+//import sv from "../../i18n/sv.json"; // Schweden
+//import no from "../../i18n/no.json"; // Norwegen
+//import da from "../../i18n/da.json"; // Dänemark
+//import fi from "../../i18n/fi.json"; // Finnland
+//import is from "../../i18n/is.json"; // Island
+//import pt from "../../i18n/pt.json"; // Portugal
+//import el from "../../i18n/el.json"; // Griechenland, Zypern
+import tr from "../../i18n/tr.json"; // Türkei (gelegentliche Teilnahme)
+import uk from "../../i18n/uk.json"; // Ukraine
+import ru from "../../i18n/ru.json"; // Russland (aktuell ausgeschlossen, aber historisch relevant)
+import pl from "../../i18n/pl.json"; // Polen
+//import cs from "../../i18n/cs.json"; // Tschechien
+//import sk from "../../i18n/sk.json"; // Slowakei
+//import hu from "../../i18n/hu.json"; // Ungarn
+//import ro from "../../i18n/ro.json"; // Rumänien
+//import bg from "../../i18n/bg.json"; // Bulgarien
+//import sr from "../../i18n/sr.json"; // Serbien
+//import hr from "../../i18n/hr.json"; // Kroatien
+//import sl from "../../i18n/sl.json"; // Slowenien
+//import mk from "../../i18n/mk.json"; // Nordmazedonien
+//import sq from "../../i18n/sq.json"; // Albanien
+//import he from "../../i18n/he.json"; // Israel
+//import ka from "../../i18n/ka.json"; // Georgien
+//import hy from "../../i18n/hy.json"; // Armenien
+//import az from "../../i18n/az.json"; // Aserbaidschan
+//import lt from "../../i18n/lt.json"; // Litauen
+//import lv from "../../i18n/lv.json"; // Lettland
+//import et from "../../i18n/et.json"; // Estland
+//import mt from "../../i18n/mt.json"; // Malta
 
 export async function getStaticPaths() {
   return [
@@ -12,12 +43,54 @@ export async function getStaticPaths() {
     { params: { lang: "fr" } },
     { params: { lang: "es" } },
     { params: { lang: "ja" } },
+    { params: { lang: "it" } },
+    { params: { lang: "nl" } },
+    { params: { lang: "sv" } },
+    { params: { lang: "no" } },
+    { params: { lang: "da" } },
+    { params: { lang: "fi" } },
+    { params: { lang: "is" } },
+    { params: { lang: "pt" } },
+    { params: { lang: "el" } },
+    { params: { lang: "tr" } },
+    { params: { lang: "uk" } },
+    { params: { lang: "ru" } },
+    { params: { lang: "pl" } },
+    { params: { lang: "cs" } },
+    { params: { lang: "sk" } },
+    { params: { lang: "hu" } },
+    { params: { lang: "ro" } },
+    { params: { lang: "bg" } },
+    { params: { lang: "sr" } },
+    { params: { lang: "hr" } },
+    { params: { lang: "sl" } },
+    { params: { lang: "mk" } },
+    { params: { lang: "sq" } },
+    { params: { lang: "he" } },
+    { params: { lang: "ka" } },
+    { params: { lang: "hy" } },
+    { params: { lang: "az" } },
+    { params: { lang: "lt" } },
+    { params: { lang: "lv" } },
+    { params: { lang: "et" } },
+    { params: { lang: "mt" } },
   ];
 }
 
 const { lang } = Astro.params;
 
-const translations = { en, de, fr, es, ja };
+const translations = {
+  en,
+  de,
+  fr,
+  es,
+  ja,
+  it,
+  tr,
+  uk,
+  ru,
+  pl,
+};
 
 const t = translations[lang] || en;
 ---
@@ -65,7 +138,14 @@ const t = translations[lang] || en;
             >
             <option value="/ja/" selected={lang === "ja"}>{t["lang.ja"]}</option
             >
-            <!-- More languages -->
+            <option value="/ru/" selected={lang === "ru"}>{t["lang.ru"]}</option
+            >
+            <option value="/tr/" selected={lang === "tr"}>{t["lang.tr"]}</option
+            >
+            <option value="/it/" selected={lang === "it"}>{t["lang.it"]}</option
+            >
+            <option value="/pl/" selected={lang === "pl"}>{t["lang.pl"]}</option
+            >
           </select>
         </form>
       </nav>
@@ -86,6 +166,16 @@ const t = translations[lang] || en;
       <p>{t["section.explore.text1"]}</p>
       <p>{t["section.explore.text2"]}</p>
       <p><a href="https://www.getyourguide.com">{t["link.tours"]}</a></p>
+      <h2>{t["section.tickets.title"]}</h2>
+      <p set:html={t["section.tickets.text"]} />
+      <h2>{t["faq.title"]}</h2>
+      <ul>
+        <li><strong>{t["faq.q1"]}</strong><br />{t["faq.a1"]}</li>
+        <li><strong>{t["faq.q2"]}</strong><br />{t["faq.a2"]}</li>
+        <li><strong>{t["faq.q3"]}</strong><br />{t["faq.a3"]}</li>
+        <li><strong>{t["faq.q4"]}</strong><br />{t["faq.a4"]}</li>
+        <li><strong>{t["faq.q5"]}</strong><br />{t["faq.a5"]}</li>
+      </ul>
     </main>
     <footer>
       <p><a href={`/${lang}/impressum/`}>{t["footer.imprint"]}</a></p>
