@@ -11,6 +11,27 @@ const { lang } = Astro.params;
 
 const t = translations[lang] || translations.en;
 const tshared = sharedTranslations;
+
+const newsDates = [
+  "2025-05-20",
+  "2025-05-19",
+  "2025-05-18",
+  "2025-05-17",
+  "2025-05-16",
+];
+
+// Suppose your locale is available as `locale`, e.g., "de-DE" or "el-GR"
+const locale = lang; // Or however you detect locale
+
+const formatDate = (isoDate) => {
+  const date = new Date(isoDate);
+  return new Intl.DateTimeFormat(locale, {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  }).format(date);
+};
+
 import LanguageSwitcher from "../../components/LanguageSwitcher.astro";
 import LanguageMeta from "../../components/LanguageMeta.astro";
 import Footer from "../../components/Footer.astro";
@@ -27,10 +48,6 @@ import Footer from "../../components/Footer.astro";
     <link rel="stylesheet" href="/styles/index.css" />
     <meta property="og:title" content={t["siteTitle"]} />
     <meta property="og:description" content={t["meta.description"]} />
-    <meta
-      property="og:url"
-      content="https://www.yoursite.com/best-vegan-recipes"
-    />
     <meta property="og:type" content="website" />
     <LanguageMeta />
   </head>
@@ -59,11 +76,13 @@ import Footer from "../../components/Footer.astro";
       <p set:html={t["section.tickets.text"]} />
       <h2>{t["section.news.title"]}</h2>
       <ul>
-        <li><strong>20. Mai 2025:</strong> {t["news.2025-05-20"]}</li>
-        <li><strong>19. Mai 2025:</strong> {t["news.2025-05-19"]}</li>
-        <li><strong>18. Mai 2025:</strong> {t["news.2025-05-18"]}</li>
-        <li><strong>17. Mai 2025:</strong> {t["news.2025-05-17"]}</li>
-        <li><strong>16. Mai 2025:</strong> {t["news.2025-05-16"]}</li>
+        {
+          newsDates.map((dateKey) => (
+            <li>
+              <strong>{formatDate(dateKey)}:</strong> {t[`news.${dateKey}`]}
+            </li>
+          ))
+        }
       </ul>
       <h2>{t["faq.title"]}</h2>
       <ul>
