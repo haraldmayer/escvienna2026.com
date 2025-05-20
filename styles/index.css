@@ -37,7 +37,7 @@ h1, h2 {
 }
 
 a {
-  color: #cc0066;
+  color: #a8005a;
   text-decoration: none;
 }
 
@@ -49,9 +49,9 @@ footer {
   text-align: center;
   font-size: 0.9em;
   padding: 2em;
-  background: #ffd6e8;
+  background: #ffcce0;
   margin-top: 2em;
-  color: #1a1a1a;
+  color: #111;
 }
 
 .hero {
