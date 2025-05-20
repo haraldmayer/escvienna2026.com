@@ -1,13 +1,13 @@
 {
-  "siteTitle": "ESC Vienna 2026",
-  "lang.en": "English",
   "lang.de": "Deutsch",
+  "lang.el": "Ελληνικά",
+  "lang.en": "English",
   "lang.es": "Español",
   "lang.fr": "Français",
-  "lang.ja": "日本語",
   "lang.it": "Italiano",
+  "lang.ja": "日本語",
+  "lang.nl": "Nederlands",
   "lang.pl": "Polski",
-  "lang.ru": "Русский",
-  "lang.tr": "Türkçe",
-  "lang.uk": "Українська"
+  "lang.sv": "Svenska",
+  "lang.tr": "Türkçe"
 }

@@ -4,11 +4,12 @@ Important instructions:
 - Preserve placeholders such as {name}, %s, or {{variable}} exactly as they are.
 - preserve values in double brackets [[]] in original language (those are typically brand names) but remove the double brackets.
 - preserve HTML tags and formatting.
+- make sure the output is valid JSON.
+- Make sure to escape characters that might break JSON formatting. Also in HTML tags that are part of an original json's value.
 - Align terminology with Salesforce usage wherever applicable.
-- Keep distinct Git terms in English, such as "Commit", "Branch", "Pull Request", etc.
-- Keep terms distinct to our Salesforce DevOps solution like "Hutte", "Pool", "Deployment", "Pipeline", "Snapshot", "Scratch Org", "Sandbox" etc. in English
-- Just like all other translations, transcribe them using local scripts for non-Latin languages where applicable
 - ensure that the translated text is grammatically correct and contextually appropriate.
+- ensure that every key is translated. 
+- exercise QA that no keys are missing or incorrectly translated.
 - if the key starts with "lang.", do not translate it.
 
 Here is the list of values to translate:
