@@ -52,16 +52,17 @@ node tools/translate/translate-json.js src/i18n/de.json en fr es ja it tr pl --s
 - make sitemap dynamic
 - add meta for tags, OpenGraph, SERP listing...
 - Add no-cookie web analytics
-- add cloudflare (for basic analytics and cdn); enforce ssl ✅
+- add cloudflare ✅
+  - enforce ssl ✅
+  - set page rule to redirect /de* to / ✅
+  - enable web analytics <https://dash.cloudflare.com/d838d7b16170f41e64a5b02035f81f5f/web-analytics/sites> ✅
 - language tooling: allow re-translating individual keys only (also support hirarchy: eg only pass "parent node" and translate sub-nodes)
 - add ci/cd which automatically sends "update news" prompt to openai, rewrites index.astro, commits + builds (or local "cron job" on mac)
 - add additional languages ✅
--- el
--- da
--- ru
--- sv
--- nl
--- no
+  - da
+  - ru
+  - no
+  - uk
 - allow markup inside of language file ✅
 - add gh action for automated building ✅
 - add FAQ ✅
@@ -73,5 +74,6 @@ node tools/translate/translate-json.js src/i18n/de.json en fr es ja it tr pl --s
 - Submit to Google index ✅
 
 - regularly check <https://search.google.com/search-console/performance/search-analytics?resource_id=sc-domain%3Aescvienna2026.com&hl=de&last_24_hours=true&metrics=CLICKS%2CPOSITION>
-- link building (eg reddits about ESC but also about chatGPT hacks)
 
+- regularly check [text](https://dash.cloudflare.com/d838d7b16170f41e64a5b02035f81f5f/analytics)
+- link building (eg reddits about ESC but also about chatGPT hacks)
