@@ -4,36 +4,49 @@
     <url>
         <loc>https://escvienna2026.com/</loc>
     </url>
-
-    <!-- English -->
     <url>
         <loc>https://escvienna2026.com/en/</loc>
     </url>
     <url>
         <loc>https://escvienna2026.com/en/impressum/</loc>
     </url>
-
-    <!-- Spanish -->
     <url>
         <loc>https://escvienna2026.com/es/</loc>
     </url>
     <url>
         <loc>https://escvienna2026.com/es/impressum/</loc>
     </url>
-
-    <!-- French -->
     <url>
         <loc>https://escvienna2026.com/fr/</loc>
     </url>
     <url>
         <loc>https://escvienna2026.com/fr/impressum/</loc>
     </url>
-
-    <!-- Japanese -->
+    <url>
+        <loc>https://escvienna2026.com/it/</loc>
+    </url>
+    <url>
+        <loc>https://escvienna2026.com/it/impressum/</loc>
+    </url>
+    <url>
+        <loc>https://escvienna2026.com/ja/</loc>
+    </url>
     <url>
         <loc>https://escvienna2026.com/ja/</loc>
     </url>
     <url>
         <loc>https://escvienna2026.com/ja/impressum/</loc>
+    </url>
+    <url>
+        <loc>https://escvienna2026.com/tr/</loc>
+    </url>
+    <url>
+        <loc>https://escvienna2026.com/tr/impressum/</loc>
+    </url>
+    <url>
+        <loc>https://escvienna2026.com/pl/</loc>
+    </url>
+    <url>
+        <loc>https://escvienna2026.com/pl/impressum/</loc>
     </url>
 </urlset>
