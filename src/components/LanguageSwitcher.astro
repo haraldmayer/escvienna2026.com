@@ -8,8 +8,7 @@ const { lang, t, tshared } = Astro.props;
     <select id="lang-select" name="lang" onchange="location.href=this.value">
       <option value="/en/" selected={lang === "en"}>{tshared["lang.en"]}</option
       >
-      <option value="/de/" selected={lang === "de"}>{tshared["lang.de"]}</option
-      >
+      <option value="/" selected={lang === "de"}>{tshared["lang.de"]}</option>
       <option value="/fr/" selected={lang === "fr"}>{tshared["lang.fr"]}</option
       >
       <option value="/es/" selected={lang === "es"}>{tshared["lang.es"]}</option

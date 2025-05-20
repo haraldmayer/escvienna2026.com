@@ -50,10 +50,17 @@ node tools/translate/translate-json.js src/i18n/de.json en fr es ja it tr pl --s
 
 - add a "content regenerator" logic (rewrite the main content block based on current events)
 - make sitemap dynamic
+- add meta for tags, OpenGraph, SERP listing...
 - Add no-cookie web analytics (probably requires cloudflare upfront)
 - language tooling: allow re-translating individual keys only (also support hirarchy: eg only pass "parent node" and translate sub-nodes)
 - add ci/cd which automatically sends "update news" prompt to openai, rewrites index.astro, commits + builds (or local "cron job" on mac)
 - add additional languages ✅
+-- el
+-- da
+-- ru
+-- sv
+-- nl
+-- no
 - allow markup inside of language file ✅
 - add gh action for automated building ✅
 - add FAQ ✅
