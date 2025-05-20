@@ -20,7 +20,7 @@ npm run deploy   # Pushes the contents of /dist to the gh-pages branch; obsolete
 
 ```bash
 node tools/translate/translate-json.js src/i18n/de.json fr es
-node tools/translate/translate-json.js src/i18n/de.json fr es en ja --skip-existing # only translate new keys
+node tools/translate/translate-json.js src/i18n/de.json fr es en ja it tr pl --skip-existing # only translate new keys
 ```
 
 In src/pages/[lang]/index.astro:
