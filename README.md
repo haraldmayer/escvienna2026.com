@@ -28,6 +28,22 @@ In src/pages/[lang]/index.astro:
 - add additional languages at the top of file (add to imports, function getStaticPaths, const translations)
 - in de.json, add keys for additional languages and re-generate other language files with --skip-existing
 
+## Maintain content
+
+copy/paste template of index.astro and prompt:
+
+```txt
+- extend content of this page based on latest news on ESC 2026 (in german)
+- print a flat json with new language keys to store all new content in key/value pairs, and reference it from the template
+<add template>
+```
+
+run translations with:
+
+```bash
+node tools/translate/translate-json.js src/i18n/de.json en fr es ja it tr pl --skip-existing
+```
+
 ## TODO
 
 ### code and content
