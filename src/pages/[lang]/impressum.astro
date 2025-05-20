@@ -1,12 +1,15 @@
 ---
-import en from "../../i18n/en.json";
-import de from "../../i18n/de.json";
-import fr from "../../i18n/fr.json";
-import es from "../../i18n/es.json";
-import ja from "../../i18n/ja.json";
-
-import LanguageSwitcher from "../../components/LanguageSwitcher.astro";
-import Footer from "../../components/Footer.astro";
+import en from "../../i18n/en.json"; // Großbritannien, Irland, Malta
+import de from "../../i18n/de.json"; // Deutschland, Österreich, Schweiz
+import fr from "../../i18n/fr.json"; // Frankreich, Schweiz, Belgien
+import es from "../../i18n/es.json"; // Spanien
+import ja from "../../i18n/ja.json"; // (nicht ESC, evtl. Besucher)
+import it from "../../i18n/it.json"; // Italien, Schweiz
+import tr from "../../i18n/tr.json"; // Türkei (gelegentliche Teilnahme)
+import uk from "../../i18n/uk.json"; // Ukraine
+import ru from "../../i18n/ru.json"; // Russland (aktuell ausgeschlossen, aber historisch relevant)
+import pl from "../../i18n/pl.json"; // Polen
+import shared from "../../i18n/shared.json"; // Polen
 
 export async function getStaticPaths() {
   return [
@@ -15,12 +18,59 @@ export async function getStaticPaths() {
     { params: { lang: "fr" } },
     { params: { lang: "es" } },
     { params: { lang: "ja" } },
+    { params: { lang: "it" } },
+    { params: { lang: "nl" } },
+    { params: { lang: "sv" } },
+    { params: { lang: "no" } },
+    { params: { lang: "da" } },
+    { params: { lang: "fi" } },
+    { params: { lang: "is" } },
+    { params: { lang: "pt" } },
+    { params: { lang: "el" } },
+    { params: { lang: "tr" } },
+    { params: { lang: "uk" } },
+    { params: { lang: "ru" } },
+    { params: { lang: "pl" } },
+    { params: { lang: "cs" } },
+    { params: { lang: "sk" } },
+    { params: { lang: "hu" } },
+    { params: { lang: "ro" } },
+    { params: { lang: "bg" } },
+    { params: { lang: "sr" } },
+    { params: { lang: "hr" } },
+    { params: { lang: "sl" } },
+    { params: { lang: "mk" } },
+    { params: { lang: "sq" } },
+    { params: { lang: "he" } },
+    { params: { lang: "ka" } },
+    { params: { lang: "hy" } },
+    { params: { lang: "az" } },
+    { params: { lang: "lt" } },
+    { params: { lang: "lv" } },
+    { params: { lang: "et" } },
+    { params: { lang: "mt" } },
   ];
 }
 
 const { lang } = Astro.params;
-const translations = { en, de, fr, es, ja };
+
+const translations = {
+  en,
+  de,
+  fr,
+  es,
+  ja,
+  it,
+  tr,
+  uk,
+  ru,
+  pl,
+};
+
 const t = translations[lang] || en;
+const tshared = shared;
+import LanguageSwitcher from "../../components/LanguageSwitcher.astro";
+import Footer from "../../components/Footer.astro";
 ---
 
 <!doctype html>
@@ -34,9 +84,7 @@ const t = translations[lang] || en;
   <body>
     <header>
       <strong>{t["siteTitle"]}</strong>
-      <nav>
-        <LanguageSwitcher lang={lang} t={t} />
-      </nav>
+      <LanguageSwitcher lang={lang} t={t} tshared={tshared} />
     </header>
 
     <main>

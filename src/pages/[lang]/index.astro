@@ -5,36 +5,11 @@ import fr from "../../i18n/fr.json"; // Frankreich, Schweiz, Belgien
 import es from "../../i18n/es.json"; // Spanien
 import ja from "../../i18n/ja.json"; // (nicht ESC, evtl. Besucher)
 import it from "../../i18n/it.json"; // Italien, Schweiz
-//import nl from "../../i18n/nl.json"; // Niederlande, Belgien
-//import sv from "../../i18n/sv.json"; // Schweden
-//import no from "../../i18n/no.json"; // Norwegen
-//import da from "../../i18n/da.json"; // Dänemark
-//import fi from "../../i18n/fi.json"; // Finnland
-//import is from "../../i18n/is.json"; // Island
-//import pt from "../../i18n/pt.json"; // Portugal
-//import el from "../../i18n/el.json"; // Griechenland, Zypern
 import tr from "../../i18n/tr.json"; // Türkei (gelegentliche Teilnahme)
 import uk from "../../i18n/uk.json"; // Ukraine
 import ru from "../../i18n/ru.json"; // Russland (aktuell ausgeschlossen, aber historisch relevant)
 import pl from "../../i18n/pl.json"; // Polen
-//import cs from "../../i18n/cs.json"; // Tschechien
-//import sk from "../../i18n/sk.json"; // Slowakei
-//import hu from "../../i18n/hu.json"; // Ungarn
-//import ro from "../../i18n/ro.json"; // Rumänien
-//import bg from "../../i18n/bg.json"; // Bulgarien
-//import sr from "../../i18n/sr.json"; // Serbien
-//import hr from "../../i18n/hr.json"; // Kroatien
-//import sl from "../../i18n/sl.json"; // Slowenien
-//import mk from "../../i18n/mk.json"; // Nordmazedonien
-//import sq from "../../i18n/sq.json"; // Albanien
-//import he from "../../i18n/he.json"; // Israel
-//import ka from "../../i18n/ka.json"; // Georgien
-//import hy from "../../i18n/hy.json"; // Armenien
-//import az from "../../i18n/az.json"; // Aserbaidschan
-//import lt from "../../i18n/lt.json"; // Litauen
-//import lv from "../../i18n/lv.json"; // Lettland
-//import et from "../../i18n/et.json"; // Estland
-//import mt from "../../i18n/mt.json"; // Malta
+import shared from "../../i18n/shared.json"; // Polen
 
 export async function getStaticPaths() {
   return [
@@ -93,6 +68,9 @@ const translations = {
 };
 
 const t = translations[lang] || en;
+const tshared = shared;
+import LanguageSwitcher from "../../components/LanguageSwitcher.astro";
+import Footer from "../../components/Footer.astro";
 ---
 
 <!doctype html>
@@ -120,35 +98,7 @@ const t = translations[lang] || en;
   <body>
     <header>
       <strong>{t["siteTitle"]}</strong>
-      <nav>
-        <form>
-          <label for="lang-select" class="visually-hidden">Language</label>
-          <select
-            id="lang-select"
-            name="lang"
-            onchange="location.href=this.value"
-          >
-            <option value="/en/" selected={lang === "en"}>{t["lang.en"]}</option
-            >
-            <option value="/de/" selected={lang === "de"}>{t["lang.de"]}</option
-            >
-            <option value="/fr/" selected={lang === "fr"}>{t["lang.fr"]}</option
-            >
-            <option value="/es/" selected={lang === "es"}>{t["lang.es"]}</option
-            >
-            <option value="/ja/" selected={lang === "ja"}>{t["lang.ja"]}</option
-            >
-            <option value="/ru/" selected={lang === "ru"}>{t["lang.ru"]}</option
-            >
-            <option value="/tr/" selected={lang === "tr"}>{t["lang.tr"]}</option
-            >
-            <option value="/it/" selected={lang === "it"}>{t["lang.it"]}</option
-            >
-            <option value="/pl/" selected={lang === "pl"}>{t["lang.pl"]}</option
-            >
-          </select>
-        </form>
-      </nav>
+      <LanguageSwitcher lang={lang} t={t} tshared={tshared} />
     </header>
     <div class="hero-bg">
       <div class="hero-content">
@@ -177,10 +127,6 @@ const t = translations[lang] || en;
         <li><strong>{t["faq.q5"]}</strong><br />{t["faq.a5"]}</li>
       </ul>
     </main>
-    <footer>
-      <p><a href={`/${lang}/impressum/`}>{t["footer.imprint"]}</a></p>
-      <p>{t["footer.notice1"]}</p>
-      <p>{t["footer.notice2"]}</p>
-    </footer>
+    <Footer lang={lang} t={t} />
   </body>
 </html>

@@ -1,14 +1,27 @@
 ---
-const { lang, t } = Astro.props;
+const { lang, t, tshared } = Astro.props;
 ---
 
-<form>
-  <label for="lang-select" class="visually-hidden">Language</label>
-  <select id="lang-select" name="lang" onchange="location.href=this.value">
-    <option value="/en/" selected={lang === "en"}>{t["lang.en"]}</option>
-    <option value="/de/" selected={lang === "de"}>{t["lang.de"]}</option>
-    <option value="/fr/" selected={lang === "fr"}>{t["lang.fr"]}</option>
-    <option value="/es/" selected={lang === "es"}>{t["lang.es"]}</option>
-    <option value="/ja/" selected={lang === "ja"}>{t["lang.ja"]}</option>
-  </select>
-</form>
+<nav>
+  <form>
+    <label for="lang-select" class="visually-hidden">Language</label>
+    <select id="lang-select" name="lang" onchange="location.href=this.value">
+      <option value="/en/" selected={lang === "en"}>{tshared["lang.en"]}</option
+      >
+      <option value="/de/" selected={lang === "de"}>{tshared["lang.de"]}</option
+      >
+      <option value="/fr/" selected={lang === "fr"}>{tshared["lang.fr"]}</option
+      >
+      <option value="/es/" selected={lang === "es"}>{tshared["lang.es"]}</option
+      >
+      <option value="/ja/" selected={lang === "ja"}>{tshared["lang.ja"]}</option
+      >
+      <option value="/tr/" selected={lang === "tr"}>{tshared["lang.tr"]}</option
+      >
+      <option value="/it/" selected={lang === "it"}>{tshared["lang.it"]}</option
+      >
+      <option value="/pl/" selected={lang === "pl"}>{tshared["lang.pl"]}</option
+      >
+    </select>
+  </form>
+</nav>
