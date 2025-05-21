@@ -11,6 +11,7 @@ const { lang } = Astro.params;
 
 const t = translations[lang] || translations.en;
 const tshared = sharedTranslations;
+const supportedLangs = Object.keys(translations);
 
 const newsDates = [
   "2025-05-20",
@@ -31,7 +32,7 @@ const formatDate = (isoDate) => {
     year: "numeric",
   }).format(date);
 };
-
+import LanguageRedirect from "../../utils/languageRedirect.js";
 import LanguageSwitcher from "../../components/LanguageSwitcher.astro";
 import LanguageMeta from "../../components/LanguageMeta.astro";
 import Footer from "../../components/Footer.astro";
