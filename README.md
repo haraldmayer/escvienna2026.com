@@ -41,7 +41,7 @@ copy/paste template of index.astro and prompt:
 run translations with:
 
 ```bash
-node tools/translate/translate-json.js src/i18n/de.json en fr es ja it tr pl --skip-existing
+node tools/translate/translate-json.js src/i18n/de.json el en es fr it ja nl pl sv tr --skip-existing
 ```
 
 ## TODO
