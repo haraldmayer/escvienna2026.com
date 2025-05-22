@@ -30,15 +30,31 @@ In src/pages/[lang]/index.astro:
 
 ## Maintain content
 
-copy/paste template of index.astro and prompt:
+- copy/paste template of index.astro and prompt:
 
 ```txt
 - extend content of this page based on latest news on ESC 2026 (in german)
-- print a flat json with new language keys to store all new content in key/value pairs, and reference it from the template
-<add template>
+- print a flat json with new language keys to store all new content in key/value pairs
 ```
 
-run translations with:
+### daily news
+
+- prompt:
+
+```txt
+extend this json with more latest ESC news, and continue the array "newsDates" with the correct keys:
+  "news.2025-05-22": "Die Stadt Wien präsentiert ein erstes Konzept für den ESC 2026, das eine Bühne am Rathausplatz und ein umfassendes Nachhaltigkeitskonzept beinhaltet.",
+  "news.2025-05-21": "Die Stadt Wels zieht ihre Bewerbung überraschend zurück. Als Grund werden logistische Herausforderungen genannt.",
+
+const newsDates = [
+  "2025-05-22",
+  "2025-05-21",
+];
+```
+
+- updates newsDates in index.astro and de.json accordingly
+
+- run translations with:
 
 ```bash
 node tools/translate/translate-json.js src/i18n/de.json el en es fr it ja nl pl sv tr --skip-existing
