@@ -14,6 +14,8 @@ const tshared = sharedTranslations;
 const supportedLangs = Object.keys(translations);
 
 const newsDates = [
+  "2025-05-22",
+  "2025-05-21",
   "2025-05-20",
   "2025-05-19",
   "2025-05-18",
@@ -94,6 +96,11 @@ import Footer from "../../components/Footer.astro";
         <li><strong>{t["faq.q5"]}</strong><br />{t["faq.a5"]}</li>
       </ul>
     </main>
-    <Footer lang={lang} t={t} />
+    <Footer
+      lang={lang}
+      t={t}
+      tshared={tshared}
+      supportedLangs={supportedLangs}
+    />
   </body>
 </html>

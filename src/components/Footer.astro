@@ -1,9 +1,27 @@
 ---
-const { lang, t } = Astro.props;
+const { lang, t, tshared, supportedLangs } = Astro.props;
+const defaultLang = "de";
 ---
 
 <footer>
   <p><a href={`/${lang}/impressum/`}>{t["footer.imprint"]}</a></p>
   <p>{t["footer.notice1"]}</p>
   <p>{t["footer.notice2"]}</p>
+
+  <nav aria-label="Language switcher (SEO links)">
+    <h2 class="visually-hidden">Languages</h2>
+    <ul class="language-links">
+      {
+        supportedLangs.map((code) => {
+          // Determine the path: root for default language, else '/code/'
+          const path = code === defaultLang ? "/" : `/${code}/`;
+          return (
+            <li>
+              <a href={path}>{tshared[`lang.${code}`] ?? code.toUpperCase()}</a>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </nav>
 </footer>

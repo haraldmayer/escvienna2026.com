@@ -129,3 +129,35 @@ nav form {
   border-color: #007acc;
   outline: none;
 }
+.language-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5em;
+  margin-top: 1.5em;
+  list-style: none;
+  padding: 0;
+}
+
+.language-links li {
+  margin: 0;
+}
+
+.language-links a {
+  display: inline-block;
+  padding: 0.4em 0.8em;
+  border-radius: 4px;
+  background-color: #a0005c; /* Dark pink for contrast */
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.language-links a:hover,
+.language-links a:focus {
+  background-color: #cc0066; /* Lighter pink on hover/focus */
+  color: #ffffff;
+  outline: none;
+}
+
