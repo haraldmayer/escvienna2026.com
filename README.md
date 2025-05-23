@@ -64,10 +64,12 @@ node tools/translate/translate-json.js src/i18n/de.json el en es fr it ja nl pl 
 
 ### code and content
 
+- add fanartikel affiliate link https://amzn.to/3Fn7dbd
+- optimize CTAs for conversion
 - add a "content regenerator" logic (rewrite the main content block based on current events)
 - make sitemap dynamic
 - add meta for tags, OpenGraph, SERP listing...
-- Add no-cookie web analytics
+- Add no-cookie web analytics ✅
 - add cloudflare ✅
   - enforce ssl ✅
   - set page rule to redirect /de* to / ✅
@@ -86,6 +88,8 @@ node tools/translate/translate-json.js src/i18n/de.json el en es fr it ja nl pl 
 
 
 ### other
+
+- check in on affiliate applications (avin, cj...)
 
 - Submit to Google index ✅
 
