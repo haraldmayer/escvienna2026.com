@@ -51,6 +51,12 @@ import Footer from "../../components/Footer.astro";
     <meta property="og:title" content={t["siteTitle"]} />
     <meta property="og:description" content={t["meta.description"]} />
     <meta property="og:type" content="website" />
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <LanguageMeta />
   </head>
   <body>
