@@ -1,0 +1,34 @@
+---
+const { lang, t, tshared } = Astro.props;
+---
+
+<!-- Historic section -->
+<h2>{t["history.title"]}</h2>
+<table class="esc-history">
+  <thead>
+    <tr>
+      <th>{t["history.table.year"]}</th>
+      <th>{t["history.table.city"]}</th>
+      <th>{t["history.table.winner"]}</th>
+      <th>{t["history.table.song"]}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {
+      [2024, 2023, 2022, 2021, 2019, 2018, 2017, 2016, 2015, 2014].map(
+        (year) => (
+          <tr>
+            <td>{year}</td>
+            <td>{t[`history.${year}.city`]}</td>
+            <td>{t[`history.${year}.winner`]}</td>
+            <td>
+              <a href={t[`history.${year}.link`]} target="_blank">
+                "{t[`history.${year}.song`]}"
+              </a>
+            </td>
+          </tr>
+        )
+      )
+    }
+  </tbody>
+</table>

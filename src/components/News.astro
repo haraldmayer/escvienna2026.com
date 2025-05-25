@@ -1,0 +1,33 @@
+---
+const { lang, t } = Astro.props;
+const newsDates = [
+  "2025-05-22",
+  "2025-05-21",
+  "2025-05-20",
+  "2025-05-19",
+  "2025-05-18",
+  "2025-05-17",
+  "2025-05-16",
+];
+const locale = lang;
+const formatDate = (isoDate) => {
+  const date = new Date(isoDate);
+  return new Intl.DateTimeFormat(locale, {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  }).format(date);
+};
+---
+
+<!-- News Section -->
+<h2>{t["section.news.title"]}</h2>
+<ul>
+  {
+    newsDates.map((dateKey) => (
+      <li>
+        <strong>{formatDate(dateKey)}:</strong> {t[`news.${dateKey}`]}
+      </li>
+    ))
+  }
+</ul>

@@ -8,12 +8,11 @@ import {
 export { getStaticPaths };
 
 const { lang } = Astro.params;
-
 const t = translations[lang] || translations.en;
 const tshared = sharedTranslations;
 const supportedLangs = Object.keys(translations);
+const defaultLang = "de";
 import LanguageSwitcher from "../../components/LanguageSwitcher.astro";
-import LanguageMeta from "../../components/LanguageMeta.astro";
 import Footer from "../../components/Footer.astro";
 ---
 
@@ -25,12 +24,16 @@ import Footer from "../../components/Footer.astro";
     <meta name="robots" content="noindex, nofollow" />
     <title>{t["nav.imprint"]}</title>
     <link rel="stylesheet" href="/styles/index.css" />
-    <LanguageMeta />
   </head>
   <body>
     <header>
       <strong>{t["siteTitle"]}</strong>
-      <LanguageSwitcher lang={lang} t={t} tshared={tshared} />
+      <LanguageSwitcher
+        lang={lang}
+        tshared={tshared}
+        supportedLangs={supportedLangs}
+        defaultLang={defaultLang}
+      />
     </header>
 
     <main>
@@ -56,6 +59,7 @@ import Footer from "../../components/Footer.astro";
       t={t}
       tshared={tshared}
       supportedLangs={supportedLangs}
+      defaultLang={defaultLang}
     />
   </body>
 </html>

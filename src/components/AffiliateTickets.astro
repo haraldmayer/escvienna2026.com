@@ -1,0 +1,6 @@
+---
+const { t } = Astro.props;
+---
+
+<h2>{t["section.tickets.title"]}</h2>
+<p set:html={t["section.tickets.text"]} />

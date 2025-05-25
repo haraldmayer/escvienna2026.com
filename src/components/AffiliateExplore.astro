@@ -1,0 +1,19 @@
+---
+const { t, tshared } = Astro.props;
+---
+
+<h2>{t["section.explore.title"]}</h2>
+<p>{t["section.explore.text1"]}</p>
+<p>{t["section.explore.text2"]}</p>
+<div class="cta-buttons">
+  <a
+    href="https://www.getyourguide.com/vienna-l7/?partner_id=CBISF6I&utm_medium=online_publisher"
+    class="cta-button"
+    target="_blank"
+    rel="noopener"
+  >
+    <span class="cta-emoji">📍</span>
+    → {tshared["brand.getyourguide"]} -
+    {t["link.tours"]}
+  </a>
+</div>

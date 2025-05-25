@@ -1,0 +1,18 @@
+---
+const { t, tshared } = Astro.props;
+---
+
+<h2>{t["section.shop.title"]}</h2>
+<p>{t["section.shop.text"]}</p>
+<div class="cta-buttons">
+  <a
+    href="https://www.amazon.de/s?k=esc+eurovision+song+contest&crid=33VCGZB2XT46B&sprefix=esc+eurovision+song%2Caps%2C178&linkCode=ll2&tag=esc2016-21&linkId=1d1f7a6e0104fda242bb6e10c7394341&ref_=as_li_ss_tl"
+    class="cta-button"
+    target="_blank"
+    rel="noopener"
+  >
+    <span class="cta-emoji">🛒</span>
+    → {tshared["brand.amazon"]} -
+    {t["link.shop"]}
+  </a>
+</div>

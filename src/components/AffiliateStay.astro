@@ -1,0 +1,18 @@
+---
+const { t, tshared } = Astro.props;
+---
+
+<h2>{t["section.stay.title"]}</h2>
+<p>{t["section.stay.text"]}</p>
+<div class="cta-buttons">
+  <a
+    href="https://www.booking.com"
+    class="cta-button"
+    target="_blank"
+    rel="noopener"
+  >
+    <span class="cta-emoji">🛏️</span>
+    → {tshared["brand.booking"]} -
+    {t["link.booking"]}
+  </a>
+</div>

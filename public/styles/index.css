@@ -274,6 +274,6 @@ section .cta-button:hover {
 
 section .cta-emoji {
   background-color: white;
-  padding:0 0.5rem;
+  padding:0.2rem 0.5rem;
   border-radius: 0.5rem;
 }

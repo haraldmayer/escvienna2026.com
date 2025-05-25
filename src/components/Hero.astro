@@ -1,0 +1,25 @@
+---
+const { t, tshared } = Astro.props;
+---
+
+<div class="hero-bg">
+  <div class="hero-content">
+    <h1>{t["home.title"]}</h1>
+    <p>{t["home.subtitle"]}</p>
+    <div class="cta-buttons">
+      <!--<a
+          href="https://eurovision.tv/tickets"
+          class="cta-button"
+          target="_blank"
+          rel="noopener"
+          >🎫 {tshared["cta.tickets"] || "Jetzt Tickets sichern"}</a
+        > -->
+      <a
+        href="https://eurovision.tv"
+        class="cta-button secondary"
+        target="_blank"
+        rel="noopener">🌐 {t["cta.official"]}</a
+      >
+    </div>
+  </div>
+</div>

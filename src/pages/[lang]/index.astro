@@ -8,35 +8,22 @@ import {
 export { getStaticPaths };
 
 const { lang } = Astro.params;
-
 const t = translations[lang] || translations.en;
 const tshared = sharedTranslations;
 const supportedLangs = Object.keys(translations);
-
-const newsDates = [
-  "2025-05-22",
-  "2025-05-21",
-  "2025-05-20",
-  "2025-05-19",
-  "2025-05-18",
-  "2025-05-17",
-  "2025-05-16",
-];
-
-const locale = lang;
-
-const formatDate = (isoDate) => {
-  const date = new Date(isoDate);
-  return new Intl.DateTimeFormat(locale, {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  }).format(date);
-};
+const defaultLang = "de";
 import LanguageRedirect from "../../utils/languageRedirect.js";
 import LanguageSwitcher from "../../components/LanguageSwitcher.astro";
 import LanguageMeta from "../../components/LanguageMeta.astro";
 import Footer from "../../components/Footer.astro";
+import FAQ from "../../components/FAQ.astro";
+import AffiliateExplore from "../../components/AffiliateExplore.astro";
+import AffiliateMerch from "../../components/AffiliateMerch.astro";
+import AffiliateStay from "../../components/AffiliateStay.astro";
+import AffiliateTickets from "../../components/AffiliateTickets.astro";
+import Hero from "../../components/Hero.astro";
+import News from "../../components/News.astro";
+import HistoryTable from "../../components/HistoryTable.astro";
 ---
 
 <!doctype html>
@@ -74,145 +61,42 @@ import Footer from "../../components/Footer.astro";
       sizes="256x256"
       href="/favicon-256x256.png"
     />
-    <LanguageMeta />
+    <LanguageMeta supportedLangs={supportedLangs} defaultLang={defaultLang} />
   </head>
   <body>
     <header>
       <strong>{t["siteTitle"]}</strong>
-      <LanguageSwitcher lang={lang} t={t} tshared={tshared} />
+      <LanguageSwitcher
+        lang={lang}
+        tshared={tshared}
+        supportedLangs={supportedLangs}
+        defaultLang={defaultLang}
+      />
     </header>
-    <div class="hero-bg">
-      <div class="hero-content">
-        <h1>{t["home.title"]}</h1>
-        <p>{t["home.subtitle"]}</p>
-        <div class="cta-buttons">
-          <!--<a
-            href="https://eurovision.tv/tickets"
-            class="cta-button"
-            target="_blank"
-            rel="noopener"
-            >🎫 {tshared["cta.tickets"] || "Jetzt Tickets sichern"}</a
-          > -->
-          <a
-            href="https://eurovision.tv"
-            class="cta-button secondary"
-            target="_blank"
-            rel="noopener">🌐 {t["cta.official"]}</a
-          >
-        </div>
-      </div>
-    </div>
+    <Hero t={t} tshared={tshared} />
     <main>
       <h2>{t["section.expect.title"]}</h2>
       <div set:html={t["esc2026_summary"]} />
 
       <!-- affiliate -->
       <section>
-        <h2>{t["section.stay.title"]}</h2>
-        <p>{t["section.stay.text"]}</p>
-        <div class="cta-buttons">
-          <a
-            href="https://www.booking.com"
-            class="cta-button"
-            target="_blank"
-            rel="noopener"
-          >
-            <span class="cta-emoji">🛏️</span>
-            {t["link.booking"]}
-          </a>
-        </div>
-
-        <h2>{t["section.explore.title"]}</h2>
-        <p>{t["section.explore.text1"]}</p>
-        <p>{t["section.explore.text2"]}</p>
-        <div class="cta-buttons">
-          <a
-            href="https://www.getyourguide.com/vienna-l7/?partner_id=CBISF6I&utm_medium=online_publisher"
-            class="cta-button"
-            target="_blank"
-            rel="noopener"
-          >
-            <span class="cta-emoji">📍</span>
-            {t["link.tours"]}
-          </a>
-        </div>
-
-        <h2>{t["section.shop.title"]}</h2>
-        <p>{t["section.shop.text"]}</p>
-        <div class="cta-buttons">
-          <a
-            href="https://www.amazon.de/s?k=esc+eurovision+song+contest&crid=33VCGZB2XT46B&sprefix=esc+eurovision+song%2Caps%2C178&linkCode=ll2&tag=esc2016-21&linkId=1d1f7a6e0104fda242bb6e10c7394341&ref_=as_li_ss_tl"
-            class="cta-button"
-            target="_blank"
-            rel="noopener"
-          >
-            <span class="cta-emoji">🛒</span>
-            {t["link.shop"]}
-          </a>
-        </div>
-
-        <h2>{t["section.tickets.title"]}</h2>
-        <p set:html={t["section.tickets.text"]} />
+        <AffiliateExplore t={t} tshared={tshared} />
+        <AffiliateMerch t={t} tshared={tshared} />
+        <AffiliateStay t={t} tshared={tshared} />
+        <AffiliateTickets t={t} tshared={tshared} />
       </section>
 
-      <!-- News Section -->
-      <h2>{t["section.news.title"]}</h2>
-      <ul>
-        {
-          newsDates.map((dateKey) => (
-            <li>
-              <strong>{formatDate(dateKey)}:</strong> {t[`news.${dateKey}`]}
-            </li>
-          ))
-        }
-      </ul>
-
-      <!-- Historic section -->
-      <h2>{t["history.title"]}</h2>
-      <table class="esc-history">
-        <thead>
-          <tr>
-            <th>{t["history.table.year"]}</th>
-            <th>{t["history.table.city"]}</th>
-            <th>{t["history.table.winner"]}</th>
-            <th>{t["history.table.song"]}</th>
-          </tr>
-        </thead>
-        <tbody>
-          {
-            [2024, 2023, 2022, 2021, 2019, 2018, 2017, 2016, 2015, 2014].map(
-              (year) => (
-                <tr>
-                  <td>{year}</td>
-                  <td>{t[`history.${year}.city`]}</td>
-                  <td>{t[`history.${year}.winner`]}</td>
-                  <td>
-                    <a href={t[`history.${year}.link`]} target="_blank">
-                      "{t[`history.${year}.song`]}"
-                    </a>
-                  </td>
-                </tr>
-              )
-            )
-          }
-        </tbody>
-      </table>
-
-      <!-- FAQ Section -->
-      <h2>{t["faq.title"]}</h2>
-      <ul>
-        <li><strong>{t["faq.q1"]}</strong><br />{t["faq.a1"]}</li>
-        <li><strong>{t["faq.q2"]}</strong><br />{t["faq.a2"]}</li>
-        <li><strong>{t["faq.q3"]}</strong><br />{t["faq.a3"]}</li>
-        <li><strong>{t["faq.q4"]}</strong><br />{t["faq.a4"]}</li>
-        <li><strong>{t["faq.q5"]}</strong><br />{t["faq.a5"]}</li>
-      </ul>
+      <!-- content -->
+      <News t={t} />
+      <HistoryTable t={t} />
+      <FAQ t={t} />
     </main>
     <Footer
       lang={lang}
       t={t}
       tshared={tshared}
       supportedLangs={supportedLangs}
+      defaultLang={defaultLang}
     />
   </body>
 </html>
