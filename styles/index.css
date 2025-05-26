@@ -224,10 +224,16 @@ nav form {
 }
 
 /* ESC History Table */
+.esc-history-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
 .esc-history {
   width: 100%;
+  max-width: 100%;
   border-collapse: collapse;
   margin-top: 2rem;
+  table-layout: auto;
 }
 
 .esc-history th,
