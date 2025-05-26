@@ -3,6 +3,7 @@ const { t, tshared } = Astro.props;
 ---
 
 <h2>{t["section.explore.title"]}</h2>
+<h3>{t["section.explore.subtitle"]}</h3>
 <p>{t["section.explore.text1"]}</p>
 <p>{t["section.explore.text2"]}</p>
 <div class="cta-buttons">
@@ -12,8 +13,19 @@ const { t, tshared } = Astro.props;
     target="_blank"
     rel="noopener"
   >
-    <span class="cta-emoji">📍</span>
-    → {tshared["brand.getyourguide"]} -
+    {tshared["brand.getyourguide"]} -
     {t["link.tours"]}
+  </a>
+</div>
+<p>{t["section.stay.text"]}</p>
+<div class="cta-buttons">
+  <a
+    href="https://www.booking.com"
+    class="cta-button"
+    target="_blank"
+    rel="noopener"
+  >
+    {tshared["brand.booking"]} -
+    {t["link.booking"]}
   </a>
 </div>

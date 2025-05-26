@@ -19,7 +19,6 @@ import Footer from "../../components/Footer.astro";
 import FAQ from "../../components/FAQ.astro";
 import AffiliateExplore from "../../components/AffiliateExplore.astro";
 import AffiliateMerch from "../../components/AffiliateMerch.astro";
-import AffiliateStay from "../../components/AffiliateStay.astro";
 import AffiliateTickets from "../../components/AffiliateTickets.astro";
 import Hero from "../../components/Hero.astro";
 import News from "../../components/News.astro";
@@ -76,13 +75,12 @@ import HistoryTable from "../../components/HistoryTable.astro";
     <Hero t={t} tshared={tshared} />
     <main>
       <h2>{t["section.expect.title"]}</h2>
-      <div set:html={t["esc2026_summary"]} />
+      <div set:html={t["summary"]} />
 
       <!-- affiliate -->
       <section>
         <AffiliateExplore t={t} tshared={tshared} />
         <AffiliateMerch t={t} tshared={tshared} />
-        <AffiliateStay t={t} tshared={tshared} />
         <AffiliateTickets t={t} tshared={tshared} />
       </section>
 

@@ -20,8 +20,16 @@ npm run deploy   # Pushes the contents of /dist to the gh-pages branch; obsolete
 
 ```bash
 node tools/translate/translate-json.js src/i18n/de.json fr es
+node tools/translate/translate-json.js src/i18n/de.json # entirely translates all existing language files but de.json
 node tools/translate/translate-json.js src/i18n/de.json fr es en ja it tr pl --skip-existing # only translate new keys
+node tools/translate/translate-json.js src/i18n/de.json --skip-existing # translates missing keys in all existing language files
 ```
+
+#### removing nodes from translated files so that they are part of a re-run with --skip-existing:
+- tools/translate/skip-nodes.js, add the nodes to skip
+- node tools/translate/skip-nodes.js
+
+#### Adding new languages
 
 In src/pages/[lang]/index.astro:
 

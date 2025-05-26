@@ -117,31 +117,34 @@ const argv = minimist(process.argv.slice(2), {
 });
 
 const sourceFile = argv._[0];
-const langs = argv._.slice(1).filter(arg => !arg.startsWith('--'));
+let langs = argv._.slice(1).filter(arg => !arg.startsWith('--'));
 
-if (!sourceFile || langs.length === 0) {
-  console.error('❌ Usage: node translate-json.js source.json lang1 lang2 [--skip-existing]');
+if (!sourceFile) {
+  console.error('❌ Usage: node translate-json.js source.json [lang1 lang2 ...] [--skip-existing]');
   process.exit(1);
 }
 
-const langMap = {
-  de: 'German',
-  fr: 'French',
-  es: 'Spanish',
-  it: 'Italian',
-  pt: 'Portuguese',
-  ru: 'Russian',
-  zh: 'Chinese',
-  ja: 'Japanese',
-  ko: 'Korean',
-  tw: 'Chinese (Taiwan)',
-  nl: 'Dutch',
-  pl: 'Polish',
-};
+// If no languages provided, detect all JSON files in the same directory
+if (langs.length === 0) {
+  const dir = path.dirname(sourceFile);
+  const sourceBase = path.basename(sourceFile);
+  const files = fs.readdirSync(dir);
+  langs = files
+  .filter(f => {
+    const base = path.basename(f, '.json');
+    return (
+      f.endsWith('.json') &&
+      f !== sourceBase &&
+      /^[a-z]{2}$/.test(base)
+    );
+  })
+  .map(f => path.basename(f, '.json'));
+
+}
 
 (async () => {
   for (const langCode of langs) {
-    const targetLang = langMap[langCode] || langCode;
+    const targetLang = langCode;
     const dir = path.dirname(sourceFile);
     const targetFile = path.join(dir, `${langCode}.json`);
 

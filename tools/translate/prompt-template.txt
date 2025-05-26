@@ -2,24 +2,21 @@ Translate the following text values to ${targetLang}. Keep all keys unchanged.
 
 Important instructions:
 - Preserve placeholders such as {name}, %s, or {{variable}} exactly as they are.
-- preserve values in double brackets [[]] in original language (those are typically brand names) but remove the double brackets.
 - preserve HTML tags and formatting.
 - make sure the output is valid JSON.
-- Make sure to escape characters that might break JSON formatting. Also in HTML tags that are part of an original json's value.
-- Align terminology with Salesforce usage wherever applicable.
+- Make sure to escape characters that might break JSON formatting, even in HTML tags that are part of an original json's value.
 - ensure that the translated text is grammatically correct and contextually appropriate.
-- ensure that every key is translated. 
-- exercise QA that no keys are missing or incorrectly translated.
-- if the key starts with "lang.", do not translate it.
+- ensure that every key is translated to ${targetLang}
 
 Here is the list of values to translate:
 
 ${textBlock}
 
-Return only the translated values in this JSON format:
+Return only the translated values, and use this flat JSON format:
 {
-  "key1": "translated text",
+  "key1.subkey1": "translated text",
   "key2": "translated text"
 }
 
-Respond only with a valid JSON object containing the translated values. Do not include explanations, comments, or code blocks.
+Respond only with a valid JSON object containing the translated values. 
+Do not include explanations, comments, or code blocks.
