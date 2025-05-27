@@ -1,25 +1,24 @@
-Translate the following text values to ${targetLang}. Keep all keys unchanged.
+Translate the following key-value pairs into ${targetLang}. Keep all keys exactly as they are.
 
-Important instructions:
-- Preserve placeholders such as {name}, %s, or {{variable}} exactly as they are.
-- preserve HTML tags and formatting.
-- make sure the output is valid JSON.
-- Make sure to escape characters that might break JSON formatting, even in HTML tags that are part of an original json's value.
-- ensure that the translated text is grammatically correct and contextually appropriate.
-- double check that every output is translated to ${targetLang}
-- if the text is already in ${targetLang}, return it unchanged.
-- if the text is or contains a URL, do not translate it.
-- if the text is or contains a URL that is localizable (eg Wikipedia), localize it
+Instructions:
+- Translate only the text values.
+- If a value is already in ${targetLang}, leave it unchanged.
+- Preserve all placeholders (e.g., {name}, %s, {{variable}}) exactly.
+- Preserve all HTML tags and formatting.
+- Do not translate URLs. If the URL is localizable (e.g., Wikipedia), localize it appropriately.
+- Ensure the translated text is grammatically correct and contextually accurate.
+- Escape all characters that may break JSON formatting.
+- Output must be valid JSON, using the same key structure.
 
-Here is the list of values to translate:
+Here is the text to translate:
 
 ${textBlock}
 
-Return only the translated values, and use this flat JSON format:
+Respond only with a flat JSON object in this format:
+
 {
   "key1.subkey1": "translated text",
   "key2": "translated text"
 }
 
-Respond only with a valid JSON object containing the translated values. 
-Do not include explanations, comments, or code blocks.
+Do not include any explanations, comments, or code blocks—only the raw JSON.
