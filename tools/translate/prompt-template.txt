@@ -6,7 +6,10 @@ Important instructions:
 - make sure the output is valid JSON.
 - Make sure to escape characters that might break JSON formatting, even in HTML tags that are part of an original json's value.
 - ensure that the translated text is grammatically correct and contextually appropriate.
-- ensure that every key is translated to ${targetLang}
+- double check that every output is translated to ${targetLang}
+- if the text is already in ${targetLang}, return it unchanged.
+- if the text is or contains a URL, do not translate it.
+- if the text is or contains a URL that is localizable (eg Wikipedia), localize it
 
 Here is the list of values to translate:
 

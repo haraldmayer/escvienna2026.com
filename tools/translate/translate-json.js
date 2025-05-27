@@ -21,22 +21,6 @@ function flattenJSON(obj, prefix = '', result = {}) {
   return result;
 }
 
-function unflattenJSON(flatObj) {
-  const result = {};
-  for (const key in flatObj) {
-    const keys = key.split('.');
-    keys.reduce((acc, cur, idx) => {
-      if (idx === keys.length - 1) {
-        acc[cur] = flatObj[key];
-      } else {
-        acc[cur] = acc[cur] || {};
-      }
-      return acc[cur];
-    }, result);
-  }
-  return result;
-}
-
 async function translateValues(flatValues, targetLang = 'French') {
   const translated = {};
   const entries = Object.entries(flatValues);
