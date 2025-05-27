@@ -19,6 +19,29 @@ I'm covering events since ESC 2025, focussing on topics like the location, date 
 Provide brief and consice news update in german, using plain text (no formatting). 
 `;
 
+// Get today's date in YYYY-MM-DD format
+const today = new Date().toISOString().split('T')[0];
+
+// Read the sitemap.xml file
+fs.readFile('./../../public/Sitemap.xml', 'utf8', (err, data) => {
+  if (err) {
+    console.error('Error reading sitemap:', err);
+    return;
+  }
+
+  // Replace all <lastmod>...</lastmod> with today's date
+  const updatedXml = data.replace(/<lastmod>.*?<\/lastmod>/g, `<lastmod>${today}</lastmod>`);
+
+  // Write back to the same file or to a new one
+  fs.writeFile(sitemapPath, updatedXml, 'utf8', (err) => {
+    if (err) {
+      console.error('Error writing updated sitemap:', err);
+    } else {
+      console.log(`Sitemap updated with today's date (${today}).`);
+    }
+  });
+});
+
 // -----------------------------
 // CLI Setup
 // -----------------------------
