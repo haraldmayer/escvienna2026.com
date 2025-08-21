@@ -13,7 +13,7 @@
   "section.explore.text1": "Entdecke imperiale Architektur, gemütliche Kaffeehäuser und ein pulsierendes Nachtleben während deines Aufenthalts.",
   "section.explore.text2": "Wien wie ein Einheimischer erleben? Entdecke Touren und Aktivitäten:",
   "section.tickets.title": "Wie bekomme ich Tickets für den ESC 2026 in Österreich?",
-  "section.tickets.text": "Der Ticketverkauf für den ESC 2026 wird voraussichtlich Anfang 2026 starten – sobald der Austragungsort offiziell bestätigt wurde. Offizielle Tickets werden ausschließlich über autorisierte Plattformen wie <a href=\"https://www.oeticket.com\" target=\"_blank\" rel=\"noopener noreferrer\">oeticket.com</a> erhältlich sein. Achtung: Betrugsseiten vermeiden!",
+  "section.tickets.text": "Der Ticketverkauf für den ESC 2026 wird voraussichtlich Anfang 2026 starten – sobald der Austragungsort offiziell bestätigt wurde. Offizielle Tickets werden ausschließlich über autorisierte Plattformen wie oeticket erhältlich sein. Achtung: Betrugsseiten vermeiden!",
   "faq.title": "Häufige Fragen zum Eurovision Song Contest",
   "faq.q1": "Wann findet der ESC 2026 statt?",
   "faq.a1": "Der Eurovision Song Contest 2026 findet in Wien statt: Die Halbfinals sind am 12. und 14. Mai, das große Finale am 16. Mai 2026.",
@@ -97,5 +97,6 @@
   "news.2025-05-19": "JJ, der Gewinner des ESC 2025, äußert seine Unterstützung für Wien als Austragungsort des ESC 2026.",
   "news.2025-05-18": "Finanzielle Herausforderungen beim ORF: Die Kosten für die Ausrichtung des ESC 2026 werden auf über 30 Millionen Euro geschätzt.",
   "news.2025-05-17": "Der ORF kündigt eine transparente Auswahl des Austragungsortes für den ESC 2026 an. Wien, Graz, Innsbruck, Wels und Oberwart zeigen Interesse.",
-  "news.2025-05-16": "Nach dem Sieg von JJ mit 'Wasted Love' beim ESC 2025 in Basel beginnt Österreich mit den Vorbereitungen für den Eurovision Song Contest 2026."
+  "news.2025-05-16": "Nach dem Sieg von JJ mit 'Wasted Love' beim ESC 2025 in Basel beginnt Österreich mit den Vorbereitungen für den Eurovision Song Contest 2026.",
+  "buy": "Tickets kaufen"
 }

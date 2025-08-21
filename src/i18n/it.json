@@ -13,7 +13,7 @@
   "section.explore.text1": "Scopri architetture imperiali, accoglienti caffè e una vibrante vita notturna durante il tuo soggiorno.",
   "section.explore.text2": "Vivere Vienna come un locale? Scopri tour e attività:",
   "section.tickets.title": "Come ottenere i biglietti per l'ESC 2026 in Austria?",
-  "section.tickets.text": "La vendita dei biglietti per l'ESC 2026 inizierà presumibilmente all'inizio del 2026 – non appena sarà confermato ufficialmente il luogo di svolgimento. I biglietti ufficiali saranno disponibili esclusivamente attraverso piattaforme autorizzate come <a href=\"https://www.oeticket.com\" target=\"_blank\" rel=\"noopener noreferrer\">oeticket.com</a>. Attenzione alle pagine fraudolente!",
+  "section.tickets.text": "La vendita dei biglietti per l'ESC 2026 inizierà presumibilmente all'inizio del 2026 – non appena sarà confermato ufficialmente il luogo di svolgimento. I biglietti ufficiali saranno disponibili esclusivamente attraverso piattaforme autorizzate come oeticket.com. Attenzione alle pagine fraudolente!",
   "faq.title": "Domande frequenti sull'Eurovision Song Contest",
   "faq.q1": "Quando si terrà l'ESC 2026?",
   "faq.a1": "L'Eurovision Song Contest 2026 si terrà a Vienna: le semifinali sono il 12 e il 14 maggio, la grande finale il 16 maggio 2026.",
@@ -97,5 +97,6 @@
   "news.2025-05-19": "JJ, il vincitore dell'ESC 2025, esprime il suo sostegno per Vienna come sede dell'ESC 2026.",
   "news.2025-05-18": "Sfide finanziarie per l'ORF: i costi per organizzare l'ESC 2026 sono stimati oltre i 30 milioni di euro.",
   "news.2025-05-17": "L’ORF annuncia una selezione trasparente della sede per l'ESC 2026. Vienna, Graz, Innsbruck, Wels e Oberwart mostrano interesse.",
-  "news.2025-05-16": "Dopo la vittoria di JJ con 'Wasted Love' all'ESC 2025 a Basilea, l'Austria inizia i preparativi per l'Eurovision Song Contest 2026."
+  "news.2025-05-16": "Dopo la vittoria di JJ con 'Wasted Love' all'ESC 2025 a Basilea, l'Austria inizia i preparativi per l'Eurovision Song Contest 2026.",
+  "buy": "Biglietti d'acquisto"
 }

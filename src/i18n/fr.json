@@ -13,7 +13,7 @@
   "section.explore.text1": "Découvrez l'architecture impériale, les cafés cosy et une vie nocturne trépidante pendant votre séjour.",
   "section.explore.text2": "Vivre Vienne comme un local ? Découvrez des tours et activités :",
   "section.tickets.title": "Comment obtenir des billets pour l'ESC 2026 en Autriche ?",
-  "section.tickets.text": "La vente des billets pour l'ESC 2026 devrait débuter début 2026, dès que le lieu de l'événement aura été officiellement confirmé. Les billets officiels seront disponibles uniquement via des plateformes autorisées comme <a href=\"https://www.oeticket.com\" target=\"_blank\" rel=\"noopener noreferrer\">oeticket.com</a>. Attention : évitez les sites frauduleux !",
+  "section.tickets.text": "La vente des billets pour l'ESC 2026 devrait débuter début 2026, dès que le lieu de l'événement aura été officiellement confirmé. Les billets officiels seront disponibles uniquement via des plateformes autorisées comme oeticket.com. Attention : évitez les sites frauduleux !",
   "faq.title": "Questions fréquentes sur le Concours Eurovision de la chanson",
   "faq.q1": "Quand aura lieu l'ESC 2026 ?",
   "faq.a1": "Le Concours Eurovision de la chanson 2026 aura lieu à Vienne : les demi-finales sont le 12 et 14 mai, et la grande finale le 16 mai 2026.",
@@ -97,5 +97,6 @@
   "news.2025-05-19": "JJ, le gagnant du ESC 2025, exprime son soutien pour Vienne comme lieu d'organisation du ESC 2026.",
   "news.2025-05-18": "Défis financiers chez ORF : Les coûts d'organisation du ESC 2026 sont estimés à plus de 30 millions d'euros.",
   "news.2025-05-17": "L'ORF annonce une sélection transparente du lieu d'accueil pour le ESC 2026. Vienne, Graz, Innsbruck, Wels et Oberwart montrent leur intérêt.",
-  "news.2025-05-16": "Après la victoire de JJ avec 'Wasted Love' au ESC 2025 à Basel, l'Autriche commence les préparatifs pour le Concours Eurovision de la chanson 2026."
+  "news.2025-05-16": "Après la victoire de JJ avec 'Wasted Love' au ESC 2025 à Basel, l'Autriche commence les préparatifs pour le Concours Eurovision de la chanson 2026.",
+  "buy": "Acheter des billets"
 }
