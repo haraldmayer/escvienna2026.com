@@ -80,28 +80,9 @@ import HistoryTable from "../../components/HistoryTable.astro";
       <!-- affiliate -->
 
       <section>
+        <AffiliateTickets t={t} tshared={tshared} />
         <AffiliateExplore t={t} tshared={tshared} />
         <AffiliateMerch t={t} tshared={tshared} />
-        <AffiliateTickets t={t} tshared={tshared} />
-        <div style="margin: 2rem 0; text-align: left;">
-          <a
-            rel="sponsored"
-            href="https://www.awin1.com/cread.php?s=2359428&v=13859&q=360180&r=1966379"
-            style="display: inline-block; border: 2px solid #1976d2; border-radius: 8px; padding: 6px; box-shadow: 0 2px 8px rgba(25,118,210,0.08); transition: box-shadow 0.2s, border-color 0.2s; text-decoration: none; background: #f7faff; cursor: pointer;"
-            onmouseover="this.style.boxShadow='0 4px 16px rgba(25,118,210,0.18)';this.style.borderColor='#1565c0'"
-            onmouseout="this.style.boxShadow='0 2px 8px rgba(25,118,210,0.08)';this.style.borderColor='#1976d2'"
-          >
-            <img
-              src="https://www.awin1.com/cshow.php?s=2359428&v=13859&q=360180&r=1966379"
-              alt="oeticket.com Affiliate Banner"
-              style="max-width:220px;height:auto;vertical-align:middle;"
-            />
-            <span
-              style="display:inline-block;margin-left:12px;vertical-align:middle;font-weight:600;color:#1976d2;font-size:1rem;"
-              >{t["buy"]}</span
-            >
-          </a>
-        </div>
       </section>
 
       <!-- content -->
