@@ -6,13 +6,13 @@ const fs = require('fs');
 const path = require('path');
 
 // Keys to be removed from each JSON file (supports nested keys like 'home.subkey')
-const KEYS_TO_REMOVE = ['history'];
+const KEYS_TO_REMOVE = ['section.explore.title'];
 
 // Directory to process
 const DIRECTORY_PATH = path.join(__dirname, './../../src/i18n');
 
 // Files to exclude from processing
-const EXCLUDED_FILES = ['de.json', 'en.json', 'it.json']; // <--- Update this list as needed
+const EXCLUDED_FILES = ['de.json']; // <--- Update this list as needed
 
 // Helper: remove all keys that match or start with a target key
 function removeKeysFromFlatJson(flatObj, keysToRemove) {

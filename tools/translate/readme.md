@@ -11,11 +11,13 @@ node tools/translate/translate-json.js src/i18n/de.json en fr es ja
 node tools/translate/translate-json.js src/i18n/de.json en fr es ja --skip-existing # for adding new keys only
 ```
 
-remove node (in this example: "summary"):
-Use find/replace with this regex:
+remove node (to prepare for re-translation of individual nodes):
+
+- update skip-nodes.js EXCLUDED_FILES (if needed)
+- update skip-nodes.js KEYS_TO_REMOVE
 
 ```bash
-"summary"\s*:\s*"((?:[^"\\]|\\.|[\r\n])*)"\s*,?
+node tools/translate/skip-nodes.js 
 ```
 
 ## Instructions
