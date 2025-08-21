@@ -6,7 +6,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Keys to be removed from each JSON file (supports nested keys like 'home.subkey')
-const KEYS_TO_REMOVE = ['section.explore.title'];
+const KEYS_TO_REMOVE = ['faq'];
 
 // Directory to process
 const DIRECTORY_PATH = path.join(__dirname, './../../src/i18n');
