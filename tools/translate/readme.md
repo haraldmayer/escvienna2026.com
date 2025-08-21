@@ -1,4 +1,4 @@
-# Basic openAI powered tool for translating language files (json)
+.# Basic openAI powered tool for translating language files (json)
 
 in .env, add OPENAI_API_KEY=
 

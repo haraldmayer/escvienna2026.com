@@ -4,6 +4,16 @@
 
 ## Dev
 
+### one time setup
+
+- clone repo
+- run `npm install`
+- run `npm install --prefix tools/translate`
+- run `touch .env && echo "OPENAI_API_KEY=" > .env`
+- enter open ai key from https://platform.openai.com/settings/organization/api-keys
+
+### general
+
 The `gh-pages` branch contains only the `dist/` folder and is used for GitHub Pages.
 
 ```bash
