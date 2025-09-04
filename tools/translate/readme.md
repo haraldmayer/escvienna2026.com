@@ -24,3 +24,7 @@ node tools/translate/skip-nodes.js
 
 - Fine-tune the prompt in `prompt-template.txt`
 - Add more languages in `const langMap`
+
+## Language handling
+
+- check cloudflare -> rules -> overview: there are rules that redirect /de and /de/ to root (why 2? regex not available on free plan, and wildcard matching doesn't work in this case)
