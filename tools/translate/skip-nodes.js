@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 // call with:
 // node tools/translate/skip-nodes.js
 // after updating KEYS_TO_REMOVE and EXCLUDED_FILES

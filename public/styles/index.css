@@ -100,30 +100,70 @@ footer {
 
 /* CTA-Buttons im Header: Reset durch spezifischeren Selektor */
 .hero-content .cta-buttons {
-  display: inline-block;
-  margin-top: 1rem;
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 2rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .hero-content .cta-button {
-  display: inline-block;
-  background-color: #ffffff;
-  color: #cc0066;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   text-decoration: none;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
 }
 
-.hero-content .cta-button:hover {
-  background-color: #ffe0ef;
+/* Primary CTA - Optimized for conversions */
+.hero-content .cta-button.primary {
+  background: linear-gradient(135deg, #ff0066 0%, #cc0066 100%);
+  color: #ffffff;
+  padding: 1rem 2.5rem;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  box-shadow: 0 6px 20px rgba(204, 0, 102, 0.4);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
+
+.hero-content .cta-button.primary:hover {
+  background: linear-gradient(135deg, #ff1a75 0%, #d91a6b 100%);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(204, 0, 102, 0.5);
+  text-decoration: none;
+}
+
+.hero-content .cta-button.primary:active {
+  transform: translateY(0) scale(1.02);
+}
+
+.hero-content .cta-button.primary .cta-emoji {
+  background-color: rgba(255, 255, 255, 0.25);
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
+  font-size: 1.1em;
+}
+
+/* Secondary CTA - Subtle ghost style */
 .hero-content .cta-button.secondary {
-  background-color: #f0f0f0;
-  color: #333;
+  background-color: transparent;
+  color: #ffffff;
+  padding: 0.875rem 1.75rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
 }
+
 .hero-content .cta-button.secondary:hover {
-  background-color: #e0e0e0;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-1px);
+  text-decoration: none;
 }
 
 .visually-hidden {
@@ -282,4 +322,41 @@ section .cta-emoji {
   background-color: white;
   padding:0.2rem 0.5rem;
   border-radius: 0.5rem;
+}
+
+/* Responsive CTA Buttons for Mobile */
+@media (max-width: 768px) {
+  .hero-content .cta-buttons {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .hero-content .cta-button.primary {
+    width: 100%;
+    max-width: 320px;
+    padding: 1.125rem 2rem;
+    font-size: 1.1rem;
+    justify-content: center;
+  }
+
+  .hero-content .cta-button.secondary {
+    width: 100%;
+    max-width: 320px;
+    padding: 0.875rem 1.5rem;
+    justify-content: center;
+  }
+
+  .hero-bg {
+    padding: 4rem 1rem 3rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+  }
 }
