@@ -23,6 +23,7 @@ import AffiliateTickets from "../../components/AffiliateTickets.astro";
 import Hero from "../../components/Hero.astro";
 import News from "../../components/News.astro";
 import HistoryTable from "../../components/HistoryTable.astro";
+import CookieConsent from "../../components/CookieConsent.astro";
 ---
 
 <!doctype html>
@@ -60,6 +61,21 @@ import HistoryTable from "../../components/HistoryTable.astro";
       sizes="256x256"
       href="/favicon-256x256.png"
     />
+    <!-- block when no cookie consent // START -->
+    <script is:inline>
+      // Only load AdSense if user has given cookie consent
+      (function() {
+        const consent = localStorage.getItem('cookie-consent');
+        if (consent === 'accepted') {
+          const script = document.createElement('script');
+          script.async = true;
+          script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4042537015105922';
+          script.crossOrigin = 'anonymous';
+          document.head.appendChild(script);
+        }
+      })();
+    </script>
+    <!-- block when no cookie consent // END -->
     <LanguageMeta supportedLangs={supportedLangs} defaultLang={defaultLang} />
   </head>
   <body>
@@ -97,5 +113,6 @@ import HistoryTable from "../../components/HistoryTable.astro";
       supportedLangs={supportedLangs}
       defaultLang={defaultLang}
     />
+    <CookieConsent tshared={tshared} />
   </body>
 </html>
